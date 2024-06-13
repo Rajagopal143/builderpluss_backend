@@ -15,13 +15,13 @@ const db1 = new Neo4jgraph(
 );
 
 const dbGraph = new Neo4jgraph(
-  "bolt://23.20.122.223:7687/",
+  "neo4j://23.20.122.223:7474/",
   "neo4j",
   "123456789",
   "neo4j"
 );
 const productGraph = new Neo4jgraph(
-  "bolt://23.20.122.223:7687/",
+  "neo4j://23.20.122.223:7474/",
   "neo4j",
   "123456789",
   "neo4j"
