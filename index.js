@@ -1,4 +1,4 @@
-// app.js
+
 const express = require("express");
 const Neo4jDatabase = require("./neo4j");
 const cors = require('cors');
