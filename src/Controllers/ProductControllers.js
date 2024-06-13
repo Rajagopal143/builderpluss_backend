@@ -102,6 +102,7 @@ const ValueForFilter = async (req, res) => {
       "Project Type",
       "Length",
       "Look",
+      "catgorey",
     ];
     const data = {};
     for (let attribute of need) {
