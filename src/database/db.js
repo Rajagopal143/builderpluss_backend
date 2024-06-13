@@ -1,4 +1,4 @@
-const Neo4jDatabase = require("../../neo4j");
+const Neo4jDatabase = require("../../neo4j.js");
 const Neo4jgraph = require("../Controllers/neo4jgraph.js");
 
 const rules = new Neo4jDatabase(

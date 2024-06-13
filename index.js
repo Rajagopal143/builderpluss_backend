@@ -14,7 +14,6 @@ const dotenv = require("dotenv");
 
 
 app.use(express.json());
-app.use(dotenv());
 
 //connect to neo4jDatabase
 
