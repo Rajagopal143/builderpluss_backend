@@ -14,13 +14,15 @@ const dotenv = require("dotenv");
 
 
 app.use(express.json());
-app.use(dotenv());
+// app.use(dotenv());
 
 //connect to neo4jDatabase
-
+app.get("/", (req, res) => {
+  res.send("wellcome to Builderpluss software")
+})
 
 app.use(cors());
-app.use("/", nodeRouter);
+// app.use("/", nodeRouter);
 app.use("/api/product/", ProductRouter);
 app.use('/api/board',BoardRouter)
 app.use("/compare",compareRouter)
