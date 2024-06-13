@@ -1,14 +1,14 @@
-const Neo4jDatabase = require("../../neo4j");
+const Neo4jDatabase = require("../../neo4j.js");
 const Neo4jgraph = require("../Controllers/neo4jgraph.js");
 
 const rules = new Neo4jDatabase(
-  "bolt://localhost:7687/neo4j",
+  "bolt://23.20.122.223:7687/neo4j",
   "raj",
   "1234567890"
 );
 
 const db1 = new Neo4jgraph(
-  "bolt://localhost:7687/",
+  "bolt://23.20.122.223:7687/",
   "neo4j",
   "1234567890",
   "neo4j"

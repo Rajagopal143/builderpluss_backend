@@ -1,4 +1,5 @@
-// app.js
+
+
 const express = require("express");
 const Neo4jDatabase = require("./neo4j");
 const cors = require('cors');
@@ -10,11 +11,13 @@ const { BoardRouter } = require("./src/Routes/board.Route.js");
 const app = express();
 const PORT = 4000;
 
+
+
 const dotenv = require("dotenv");
 
 
 app.use(express.json());
-// app.use(dotenv());
+app.use(dotenv());
 
 //connect to neo4jDatabase
 app.get("/", (req, res) => {

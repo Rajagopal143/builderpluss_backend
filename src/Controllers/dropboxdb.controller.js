@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const dbx = require("../database/dropboxdb");
+const dbx = require("../database/dropboxdb.js");
 
 const uploadFileToDropbox = async (filePath) => {
   try {
