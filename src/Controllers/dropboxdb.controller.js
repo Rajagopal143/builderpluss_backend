@@ -10,6 +10,7 @@ const dbx = new Dropbox({
 
 
 
+
 const uploadFileToDropbox = async (req, res) => {
   const data = fs.readFileSync("floorplan.json");
   const jsonData = JSON.parse(data.toString());
