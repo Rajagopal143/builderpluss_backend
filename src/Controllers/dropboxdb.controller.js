@@ -1,23 +1,38 @@
+const { Dropbox } = require("dropbox");
 const fs = require("fs");
 const path = require("path");
-const dbx = require("../database/dropboxdb.js");
 
-const uploadFileToDropbox = async (filePath) => {
-  try {
-    const fileName = path.basename(filePath);
-    const fileContent = fs.readFileSync(filePath);
+const dbx = new Dropbox({
+  accessToken:
+    "",
+});
+const uploadFileToDropbox = async (req,res) => {
+      if (req.method === "POST") {
+        const  fileContent  = req.body;
 
-    const response = await dbx.filesUpload({
-      path: "/" + fileName+'.csv',
-      contents: fileContent,
-    });
+        try {
+          // Step 1: Upload the file to Dropbox
+          const response = await dbx.filesUpload({
+            path: `/bp3dfiles/design.blueprint3d`,
+            contents: JSON.stringify(fileContent),
+            mode: "overwrite", // 'add' to create new file, 'overwrite' to replace existing file
+          });
+          const url = await dbx.filesGetTemporaryLink({
+            path: "/bp3dfiles/design.blueprint3d",
+          });
 
-    //console.log("File uploaded to Dropbox:", response);
-  } catch (error) {
-    console.error("Error uploading file:", error);
-    }
-    
-};
+          res
+            .status(200)
+            .json({ message: "File uploaded successfully", data: url });
+        } catch (error) {
+          console.error("Error uploading to Dropbox:", error);
+          res.status(500).json({ error: "Error uploading to Dropbox" });
+        }
+      } else {
+        res.status(405).json({ error: "Method not allowed" });
+      }
+  };
+
 
 // Example usage: Upload a sample file
 module.exports = {
