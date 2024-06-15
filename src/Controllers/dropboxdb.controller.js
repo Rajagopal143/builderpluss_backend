@@ -2,11 +2,12 @@ const { Dropbox } = require("dropbox");
 const fs = require("fs");
 const path = require("path");
 
+require("dotenv").config();
 const dbx = new Dropbox({
-  accessToken:
-    "",
+  accessToken:process.env.DROPBOX_SECRET_KEY,
 });
-const uploadFileToDropbox = async (req,res) => {
+const uploadFileToDropbox = async (req, res) => {
+  console.log(process.env.DROPBOX_SECRET_KEY);
       if (req.method === "POST") {
         const  fileContent  = req.body;
 
