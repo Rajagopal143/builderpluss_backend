@@ -1,1 +1,623 @@
-{"floorplan":{"version":"0.0.2a","corners":{"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2":{"x":0,"y":0,"elevation":6},"f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"x":0,"y":8,"elevation":6},"da026c08-d76a-a944-8e7b-096b752da9ed":{"x":11,"y":8,"elevation":6},"4e3d65cb-54c0-0681-28bf-bddcc7bdb571":{"x":11,"y":0,"elevation":6}},"walls":[{"corner1":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","corner2":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"wallType":"STRAIGHT","a":{"x":-282.842712474619,"y":282.842712474619},"b":{"x":-282.842712474619,"y":517.157287525381},"length":"8m","vertices":[{"x":5,"y":795,"z":0},{"x":5,"y":5,"z":0},{"x":-5,"y":-5,"z":0},{"x":-5,"y":805,"z":0}]},{"corner1":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","corner2":"da026c08-d76a-a944-8e7b-096b752da9ed","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"wallType":"STRAIGHT","a":{"x":388.90872965260115,"y":1188.908729652601},"b":{"x":711.0912703473989,"y":1188.908729652601},"length":"11m","vertices":[{"x":1095,"y":795,"z":0},{"x":5,"y":795,"z":0},{"x":-5,"y":805,"z":0},{"x":1105,"y":805,"z":0}]},{"corner1":"da026c08-d76a-a944-8e7b-096b752da9ed","corner2":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"wallType":"STRAIGHT","a":{"x":1382.842712474619,"y":517.157287525381},"b":{"x":1382.842712474619,"y":282.84271247461896},"length":"8m","vertices":[{"x":1095,"y":5,"z":0},{"x":1095,"y":795,"z":0},{"x":1105,"y":805,"z":0},{"x":1105,"y":-5,"z":0}]},{"corner1":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","corner2":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"wallType":"STRAIGHT","a":{"x":711.0912703473989,"y":-388.90872965260115},"b":{"x":388.9087296526011,"y":-388.90872965260115},"length":"11m","vertices":[{"x":5,"y":5,"z":0},{"x":1095,"y":5,"z":0},{"x":1105,"y":-5,"z":0},{"x":-5,"y":-5,"z":0}]}],"rooms":{"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2,4e3d65cb-54c0-0681-28bf-bddcc7bdb571,da026c08-d76a-a944-8e7b-096b752da9ed,f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"roomDetails":{},"name":"BedRoom","area":"88m²"}},"wallTextures":[],"floorTextures":{},"newFloorTextures":{},"carbonSheet":{"url":"","transparency":1,"x":0,"y":0,"anchorX":0,"anchorY":0,"width":0.01,"height":0.01}},"items":[],"vertices":[[{"x":5,"y":795,"z":0},{"x":5,"y":5,"z":0},{"x":-5,"y":-5,"z":0},{"x":-5,"y":805,"z":0}],[{"x":1095,"y":795,"z":0},{"x":5,"y":795,"z":0},{"x":-5,"y":805,"z":0},{"x":1105,"y":805,"z":0}],[{"x":1095,"y":5,"z":0},{"x":1095,"y":795,"z":0},{"x":1105,"y":805,"z":0},{"x":1105,"y":-5,"z":0}],[{"x":5,"y":5,"z":0},{"x":1095,"y":5,"z":0},{"x":1105,"y":-5,"z":0},{"x":-5,"y":-5,"z":0}]],"InteriorVertices":[{"x":5,"y":795,"z":0},{"x":5,"y":5,"z":0},{"x":1095,"y":795,"z":0},{"x":1095,"y":5,"z":0}]}
+{
+  "floorplan": {
+    "carbonSheet": {
+      "anchorX": 0,
+      "anchorY": 0,
+      "height": 0.01,
+      "transparency": 1,
+      "url": "",
+      "width": 0.01,
+      "x": 0,
+      "y": 0
+    },
+    "corners": {
+      "2df5a92c-732d-41c5-13ec-db668de5bcc3": {
+        "elevation": 6,
+        "x": 10,
+        "y": 5
+      },
+      "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2": {
+        "elevation": 6,
+        "x": 0,
+        "y": 0
+      },
+      "e11266bf-ab69-4fb4-5372-2b5cfed8d4be": {
+        "elevation": 6,
+        "x": 10,
+        "y": 0
+      },
+      "f90da5e3-9e0e-eba7-173d-eb0b071e838e": {
+        "elevation": 6,
+        "x": 0,
+        "y": 5
+      }
+    },
+    "floorTextures": {},
+    "newFloorTextures": {
+      "2df5a92c-732d-41c5-13ec-db668de5bcc3,71d4f128-ae80-3d58-9bd2-711c6ce6cdf2,e11266bf-ab69-4fb4-5372-2b5cfed8d4be,f90da5e3-9e0e-eba7-173d-eb0b071e838e": {
+        "scale": 300,
+        "url": "rooms/textures/light_fine_wood.jpg"
+      }
+    },
+    "rooms": {
+      "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2,e11266bf-ab69-4fb4-5372-2b5cfed8d4be,2df5a92c-732d-41c5-13ec-db668de5bcc3,f90da5e3-9e0e-eba7-173d-eb0b071e838e": {
+        "area": "30.28m²",
+        "name": "Hall",
+        "roomDetails": {},
+        "vertices": [
+          [-486.70001220703125, 3.0099172592163086],
+          [108.9000015258789, 4.1901021003723145],
+          [108.9000015258789, 494.1900939941406],
+          [-486.70001220703125, 493.0098876953125]
+        ]
+      }
+    },
+    "version": "0.0.2a",
+    "wallTextures": [],
+    "walls": [
+      {
+        "a": {
+          "x": -176.77669529663686,
+          "y": 176.7766952966369
+        },
+        "b": {
+          "x": -176.7766952966369,
+          "y": 323.22330470336317
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2",
+        "corner2": "f90da5e3-9e0e-eba7-173d-eb0b071e838e",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "5m",
+        "vertices": [
+          {
+            "x": -486.70001220703125,
+            "y": 493.0098876953125,
+            "z": 0
+          },
+          {
+            "x": -486.70001220703125,
+            "y": 3.0099172592163086,
+            "z": 0
+          },
+          {
+            "x": -496.70001220703125,
+            "y": -7.009917259216309,
+            "z": 0
+          },
+          {
+            "x": -496.70001220703125,
+            "y": 502.9901123046875,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": 176.7766952966369,
+          "y": 676.7766952966368
+        },
+        "b": {
+          "x": 323.22330470336317,
+          "y": 676.776695296637
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "f90da5e3-9e0e-eba7-173d-eb0b071e838e",
+        "corner2": "2df5a92c-732d-41c5-13ec-db668de5bcc3",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "6.056m",
+        "vertices": [
+          {
+            "x": 108.9000015258789,
+            "y": 494.1900939941406,
+            "z": 0
+          },
+          {
+            "x": -486.70001220703125,
+            "y": 493.0098876953125,
+            "z": 0
+          },
+          {
+            "x": -496.70001220703125,
+            "y": 502.9901123046875,
+            "z": 0
+          },
+          {
+            "x": 118.9000015258789,
+            "y": 504.2099304199219,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": -99.87409568144594,
+          "y": -215.44577100512734
+        },
+        "b": {
+          "x": -277.2502289948728,
+          "y": -215.76209568144594
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "e11266bf-ab69-4fb4-5372-2b5cfed8d4be",
+        "corner2": "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "6.056m",
+        "vertices": [
+          {
+            "x": -486.70001220703125,
+            "y": 3.0099172592163086,
+            "z": 0
+          },
+          {
+            "x": 108.9000015258789,
+            "y": 4.1901021003723145,
+            "z": 0
+          },
+          {
+            "x": 118.9000015258789,
+            "y": -5.790102481842041,
+            "z": 0
+          },
+          {
+            "x": -496.70001220703125,
+            "y": -7.009917259216309,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": -63.537331031433695,
+          "y": 176.60182428228904
+        },
+        "b": {
+          "x": -63.537331031433695,
+          "y": 323.5589984808746
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "e11266bf-ab69-4fb4-5372-2b5cfed8d4be",
+        "corner2": "2df5a92c-732d-41c5-13ec-db668de5bcc3",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "5m",
+        "vertices": [
+          {
+            "x": 108.9000015258789,
+            "y": 4.1901021003723145,
+            "z": 0
+          },
+          {
+            "x": 108.9000015258789,
+            "y": 494.1900939941406,
+            "z": 0
+          },
+          {
+            "x": 118.9000015258789,
+            "y": 504.2099304199219,
+            "z": 0
+          },
+          {
+            "x": 118.9000015258789,
+            "y": -5.790102481842041,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      }
+    ]
+  },
+  "items": [
+    {
+      "breadth": 51,
+      "fixed": false,
+      "item_name": "Chair",
+      "item_type": 1,
+      "length": 45,
+      "material_colors": [
+        "#ffffff",
+        "#cccccc",
+        "#ffffff",
+        "#ffffff",
+        "#cccccc",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff",
+        "#ffffff"
+      ],
+      "model_url": "models/js/gus-churchchair-whiteoak.js",
+      "rotation": -1.5707963267948966,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 86.4000015258789,
+      "ypos": 39.47743068655714,
+      "zpos": 249.19009804725647
+    },
+    {
+      "breadth": 70,
+      "fixed": false,
+      "format": "gltf",
+      "item_name": "Bathroommirror",
+      "item_type": 2,
+      "length": 50,
+      "material_colors": ["#e49964", "#bcd1d6", "#b2d3c4"],
+      "model_url": "models/gltf/bathroomMirror.glb",
+      "rotation": -0.001981503351151548,
+      "scale_x": 300,
+      "scale_y": 300,
+      "scale_z": 300,
+      "xpos": -0.10061464832210731,
+      "ypos": 292.37268804460075,
+      "zpos": 25.635391970287387
+    },
+    {
+      "breadth": 90,
+      "fixed": false,
+      "format": "gltf",
+      "item_name": "Cardboardboxclosed",
+      "item_type": 0,
+      "length": 50,
+      "material_colors": ["#e49964", "#ac744c"],
+      "model_url": "models/gltf/cardboardBoxClosed.glb",
+      "rotation": -1.5707963267948966,
+      "scale_x": 300,
+      "scale_y": 300,
+      "scale_z": 300,
+      "xpos": -417.0488072685888,
+      "ypos": -489.8568604552362,
+      "zpos": 0
+    },
+    {
+      "breadth": 50,
+      "fixed": false,
+      "item_name": "Window",
+      "item_type": 3,
+      "length": 90,
+      "material_colors": [
+        "#ffffff",
+        "#a09050",
+        "#a09050",
+        "#ffffff",
+        "#ffffff",
+        "#6c6c6c",
+        "#000000",
+        "#000000",
+        "#ffffff",
+        "#ffffff",
+        "#6c6c6c",
+        "#ffffff"
+      ],
+      "model_url": "models/js/whitewindow.js",
+      "rotation": 1.5707963267948966,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -491.24400000000014,
+      "ypos": 220.90628908126178,
+      "zpos": 420.2891901865779
+    },
+    {
+      "breadth": 50,
+      "fixed": false,
+      "format": "gltf",
+      "item_name": "Doorwayfront",
+      "item_type": 3,
+      "length": 90,
+      "material_colors": ["#f7ffff", "#bcd1d6", "#4e6363", "#b2d3c4"],
+      "model_url": "models/gltf/doorwayFront.glb",
+      "rotation": -1.5707963267948966,
+      "scale_x": 300,
+      "scale_y": 300,
+      "scale_z": 300,
+      "xpos": 113.4,
+      "ypos": 152.4297604560852,
+      "zpos": 78.09009803041106
+    },
+    {
+      "breadth": 100,
+      "fixed": false,
+      "item_name": "Open Door",
+      "item_type": 7,
+      "length": 40,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/open_door.js",
+      "rotation": -0.001981503351151548,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -434.14069123932444,
+      "ypos": 110.800000297771,
+      "zpos": -1.4139746181979906
+    },
+    {
+      "breadth": 40,
+      "fixed": false,
+      "item_name": "Media Console - White",
+      "item_type": 9,
+      "length": 60,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/cb-clapboard_baked.js",
+      "rotation": 3.141592653589793,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -456.70001220703125,
+      "ypos": 67.89999754396,
+      "zpos": 248.0099024772644
+    },
+    {
+      "breadth": 157.5,
+      "fixed": false,
+      "format": "gltf",
+      "item_name": "Ceilingfan",
+      "item_type": 4,
+      "length": 136.4,
+      "material_colors": ["#effaf4", "#ffe996", "#e49964"],
+      "model_url": "models/gltf/ceilingFan.gltf",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -188.90000534057617,
+      "ypos": 400,
+      "zpos": 248.60000026226044
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -410.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 124.90991725921631
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -410.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 368.70991725921635
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -258.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 124.90991725921631
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -258.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 368.70991725921635
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -106.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 124.90991725921631
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -106.70001220703125,
+      "ypos": 0.250005,
+      "zpos": 368.70991725921635
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 45.29998779296875,
+      "ypos": 0.250005,
+      "zpos": 124.90991725921631
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "item_name": "Blue Rug",
+      "item_type": 8,
+      "length": 152,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/602.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 45.29998779296875,
+      "ypos": 0.250005,
+      "zpos": 368.70991725921635
+    }
+  ],
+  "vertices": [
+    [
+      {
+        "x": -486.70001220703125,
+        "y": 493.0098876953125,
+        "z": 0
+      },
+      {
+        "x": -486.70001220703125,
+        "y": 3.0099172592163086,
+        "z": 0
+      },
+      {
+        "x": -496.70001220703125,
+        "y": -7.009917259216309,
+        "z": 0
+      },
+      {
+        "x": -496.70001220703125,
+        "y": 502.9901123046875,
+        "z": 0
+      }
+    ],
+    [
+      {
+        "x": 108.9000015258789,
+        "y": 494.1900939941406,
+        "z": 0
+      },
+      {
+        "x": -486.70001220703125,
+        "y": 493.0098876953125,
+        "z": 0
+      },
+      {
+        "x": -496.70001220703125,
+        "y": 502.9901123046875,
+        "z": 0
+      },
+      {
+        "x": 118.9000015258789,
+        "y": 504.2099304199219,
+        "z": 0
+      }
+    ],
+    [
+      {
+        "x": -486.70001220703125,
+        "y": 3.0099172592163086,
+        "z": 0
+      },
+      {
+        "x": 108.9000015258789,
+        "y": 4.1901021003723145,
+        "z": 0
+      },
+      {
+        "x": 118.9000015258789,
+        "y": -5.790102481842041,
+        "z": 0
+      },
+      {
+        "x": -496.70001220703125,
+        "y": -7.009917259216309,
+        "z": 0
+      }
+    ],
+    [
+      {
+        "x": 108.9000015258789,
+        "y": 4.1901021003723145,
+        "z": 0
+      },
+      {
+        "x": 108.9000015258789,
+        "y": 494.1900939941406,
+        "z": 0
+      },
+      {
+        "x": 118.9000015258789,
+        "y": 504.2099304199219,
+        "z": 0
+      },
+      {
+        "x": 118.9000015258789,
+        "y": -5.790102481842041,
+        "z": 0
+      }
+    ]
+  ]
+}

@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 app.use(cors());
 // app.use("/", nodeRouter);
 app.use("/api/product/", ProductRouter);
-app.use("/api/bpfile/modify", bpfileRouter);
+app.use("/api/bpfile/", bpfileRouter);
 app.use('/api/board',BoardRouter)
 app.use("/compare",compareRouter)
 
