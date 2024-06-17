@@ -63,7 +63,8 @@ const changeRoomValues = async (req, res) => {
     }
   }
   
-const addItems =async (req, res) => {
+const addItems = async (req, res) => {
+  console.log("hi")
   const { itemtype, filepath } = req.body;
     try {
       const data = fs.readFileSync("input.json");
