@@ -69,6 +69,7 @@ const addItems = async (req, res) => {
     try {
       const data = fs.readFileSync("input.json");
       const jsonData = JSON.parse(data.toString());
+      console.log(jsonData)
       const items = jsonData.items;
       items.forEach(item => {
         if (Number(item["item_type"]) == Number(itemtype)) item["model_url"] = filepath;
