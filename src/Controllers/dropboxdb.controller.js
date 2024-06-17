@@ -11,8 +11,8 @@ const getBlueprintfile = async (req, res) => {
   try {
     
     const data = fs.readFileSync("input.json");
-    console.log(data);
     const jsonData = JSON.parse(data.toString());
+    console.log(jsonData);
     res.status(200).json({ data: jsonData });
   } catch (err) {
     res.status(400).json({ data: err });
