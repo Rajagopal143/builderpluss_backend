@@ -2,26 +2,26 @@ const Neo4jDatabase = require("../../neo4j.js");
 const Neo4jgraph = require("../Controllers/neo4jgraph.js");
 
 const rules = new Neo4jDatabase(
-  "bolt://23.20.122.223:7687/neo4j",
+  "bolt://localhost:7687/neo4j",
   "raj",
   "1234567890"
 );
 
 const db1 = new Neo4jgraph(
-  "bolt://23.20.122.223:7687/",
+  "bolt://localhost:7687/",
   "neo4j",
   "1234567890",
   "neo4j"
 );
 
 const dbGraph = new Neo4jgraph(
-  "neo4j://23.20.122.223:7687/",
+  "bolt://localhost:7687",
   "neo4j",
   "123456789",
-  "floorplangraph"
+  ""
 );
 const productGraph = new Neo4jgraph(
-  "neo4j://23.20.122.223:7687/",
+  "neo4j://localhost:7687/",
   "neo4j",
   "123456789",
   "neo4j"

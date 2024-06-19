@@ -1,462 +1,580 @@
 {
+  "InteriorVertices": [],
   "floorplan": {
-    "version": "0.0.2a",
-    "corners": {
-      "253dcbbc-c39a-7382-066b-878ac23e4560": {
-        "x": -5,
-        "y": -3.5,
-        "elevation": 2.5
-      },
-      "732cb317-3281-4eb2-4435-93a3c604e59d": {
-        "x": 0,
-        "y": -3.5,
-        "elevation": 2.5
-      },
-      "458965df-513a-bfc6-e381-da3ee0776e2f": {
-        "x": 0,
-        "y": -0.5,
-        "elevation": 2.5
-      },
-      "ed328f25-98a3-8318-e91e-0d71d88256de": {
-        "x": -5,
-        "y": -0.5,
-        "elevation": 2.5
-      },
-      "90161a9c-ca8b-8d8a-767d-f43b8c846be5": {
-        "x": 4,
-        "y": -3.5,
-        "elevation": 2.5
-      },
-      "683c40e6-b6fa-5585-6996-1c3993177f96": {
-        "x": 4,
-        "y": -0.5,
-        "elevation": 2.5
-      },
-      "13c2f9f2-cfbc-83aa-e7bd-ca6bc4c70518": {
-        "x": -5,
-        "y": 2,
-        "elevation": 2.5
-      },
-      "b8f5b93e-8a9b-b14f-2704-4bf3443f7696": {
-        "x": 0,
-        "y": 2,
-        "elevation": 2.5
-      },
-      "7702e8c4-90ae-bdb4-70d9-ed17d0e1601b": {
-        "x": 4,
-        "y": 2,
-        "elevation": 2.5
-      }
-    },
-    "walls": [
-      {
-        "corner1": "253dcbbc-c39a-7382-066b-878ac23e4560",
-        "corner2": "732cb317-3281-4eb2-4435-93a3c604e59d",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -323.2233047033631, "y": -173.2233047033631 },
-        "b": { "x": -176.77669529663686, "y": -173.2233047033631 },
-        "length": "5m"
-      },
-      {
-        "corner1": "732cb317-3281-4eb2-4435-93a3c604e59d",
-        "corner2": "458965df-513a-bfc6-e381-da3ee0776e2f",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -106.06601717798213, "y": -243.93398282201787 },
-        "b": { "x": -106.06601717798213, "y": -156.06601717798213 },
-        "length": "3m"
-      },
-      {
-        "corner1": "458965df-513a-bfc6-e381-da3ee0776e2f",
-        "corner2": "ed328f25-98a3-8318-e91e-0d71d88256de",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -176.7766952966369, "y": -226.7766952966369 },
-        "b": { "x": -323.22330470336317, "y": -226.7766952966369 },
-        "length": "5m"
-      },
-      {
-        "corner1": "ed328f25-98a3-8318-e91e-0d71d88256de",
-        "corner2": "253dcbbc-c39a-7382-066b-878ac23e4560",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -393.93398282201787, "y": -156.06601717798213 },
-        "b": { "x": -393.93398282201787, "y": -243.93398282201787 },
-        "length": "3m"
-      },
-      {
-        "corner1": "732cb317-3281-4eb2-4435-93a3c604e59d",
-        "corner2": "90161a9c-ca8b-8d8a-767d-f43b8c846be5",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 141.4213562373095, "y": -208.5786437626905 },
-        "b": { "x": 258.5786437626905, "y": -208.5786437626905 },
-        "length": "4m"
-      },
-      {
-        "corner1": "90161a9c-ca8b-8d8a-767d-f43b8c846be5",
-        "corner2": "683c40e6-b6fa-5585-6996-1c3993177f96",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 293.93398282201787, "y": -243.93398282201787 },
-        "b": { "x": 293.93398282201787, "y": -156.06601717798213 },
-        "length": "3m"
-      },
-      {
-        "corner1": "683c40e6-b6fa-5585-6996-1c3993177f96",
-        "corner2": "458965df-513a-bfc6-e381-da3ee0776e2f",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 258.5786437626905, "y": -191.4213562373095 },
-        "b": { "x": 141.42135623730948, "y": -191.4213562373095 },
-        "length": "4m"
-      },
-      {
-        "corner1": "ed328f25-98a3-8318-e91e-0d71d88256de",
-        "corner2": "13c2f9f2-cfbc-83aa-e7bd-ca6bc4c70518",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -588.3883476483185, "y": 38.388347648318444 },
-        "b": { "x": -588.3883476483185, "y": 111.61165235168157 },
-        "length": "2.5m"
-      },
-      {
-        "corner1": "13c2f9f2-cfbc-83aa-e7bd-ca6bc4c70518",
-        "corner2": "b8f5b93e-8a9b-b14f-2704-4bf3443f7696",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": -323.2233047033631, "y": 376.7766952966369 },
-        "b": { "x": -176.77669529663686, "y": 376.7766952966369 },
-        "length": "5m"
-      },
-      {
-        "corner1": "b8f5b93e-8a9b-b14f-2704-4bf3443f7696",
-        "corner2": "458965df-513a-bfc6-e381-da3ee0776e2f",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 88.38834764831844, "y": 111.61165235168156 },
-        "b": { "x": 88.38834764831844, "y": 38.38834764831843 },
-        "length": "2.5m"
-      },
-      {
-        "corner1": "b8f5b93e-8a9b-b14f-2704-4bf3443f7696",
-        "corner2": "7702e8c4-90ae-bdb4-70d9-ed17d0e1601b",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 141.4213562373095, "y": 341.4213562373095 },
-        "b": { "x": 258.5786437626905, "y": 341.4213562373095 },
-        "length": "4m"
-      },
-      {
-        "corner1": "7702e8c4-90ae-bdb4-70d9-ed17d0e1601b",
-        "corner2": "683c40e6-b6fa-5585-6996-1c3993177f96",
-        "frontTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "rooms/textures/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "wallType": "STRAIGHT",
-        "a": { "x": 488.3883476483185, "y": 111.61165235168156 },
-        "b": { "x": 488.3883476483185, "y": 38.38834764831843 },
-        "length": "2.5m"
-      }
-    ],
-    "rooms": {
-      "253dcbbc-c39a-7382-066b-878ac23e4560,732cb317-3281-4eb2-4435-93a3c604e59d,458965df-513a-bfc6-e381-da3ee0776e2f,ed328f25-98a3-8318-e91e-0d71d88256de": {
-        "roomDetails": {},
-        "name": "1",
-        "area": "15m²"
-      },
-      "732cb317-3281-4eb2-4435-93a3c604e59d,90161a9c-ca8b-8d8a-767d-f43b8c846be5,683c40e6-b6fa-5585-6996-1c3993177f96,458965df-513a-bfc6-e381-da3ee0776e2f": {
-        "roomDetails": {},
-        "name": "2",
-        "area": "12m²"
-      },
-      "458965df-513a-bfc6-e381-da3ee0776e2f,683c40e6-b6fa-5585-6996-1c3993177f96,7702e8c4-90ae-bdb4-70d9-ed17d0e1601b,b8f5b93e-8a9b-b14f-2704-4bf3443f7696": {
-        "roomDetails": {},
-        "name": "4",
-        "area": "10m²"
-      },
-      "458965df-513a-bfc6-e381-da3ee0776e2f,b8f5b93e-8a9b-b14f-2704-4bf3443f7696,13c2f9f2-cfbc-83aa-e7bd-ca6bc4c70518,ed328f25-98a3-8318-e91e-0d71d88256de": {
-        "roomDetails": {},
-        "name": "3",
-        "area": "12.5m²"
-      }
-    },
-    "wallTextures": [],
-    "floorTextures": {},
-    "newFloorTextures": {},
     "carbonSheet": {
-      "url": "",
-      "transparency": 1,
-      "x": 0,
-      "y": 0,
       "anchorX": 0,
       "anchorY": 0,
+      "height": 0.01,
+      "transparency": 1,
+      "url": "",
       "width": 0.01,
-      "height": 0.01
-    }
+      "x": 0,
+      "y": 0
+    },
+    "corners": {
+      "46416a1e-107e-e3e1-94ae-b07092b8692a": {
+        "elevation": 2.5,
+        "x": 2.119,
+        "y": -3.029
+      },
+      "512235f5-0691-2900-2bf3-97daa87d4e9e": {
+        "elevation": 2.5,
+        "x": 2.119,
+        "y": 1.984
+      },
+      "5b7be61b-ee51-d1b0-1b55-46cd9c21a4f0": {
+        "elevation": 2.5,
+        "x": -4.993,
+        "y": 1.984
+      },
+      "f595a4b4-83d1-fb31-3a40-a46951716fbd": {
+        "elevation": 2.5,
+        "x": -4.993,
+        "y": -3.029
+      }
+    },
+    "floorTextures": {},
+    "newFloorTextures": {},
+    "rooms": {
+      "f595a4b4-83d1-fb31-3a40-a46951716fbd,46416a1e-107e-e3e1-94ae-b07092b8692a,512235f5-0691-2900-2bf3-97daa87d4e9e,5b7be61b-ee51-d1b0-1b55-46cd9c21a4f0": {
+        "area": "35.652m²",
+        "name": "null"
+      }
+    },
+    "version": "0.0.2a",
+    "wallTextures": [],
+    "walls": [
+      {
+        "a": {
+          "x": -247.85282861006385,
+          "y": -51.426161943397034
+        },
+        "b": {
+          "x": -39.54717138993644,
+          "y": -51.426161943397005
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "f595a4b4-83d1-fb31-3a40-a46951716fbd",
+        "corner2": "46416a1e-107e-e3e1-94ae-b07092b8692a",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "7.112m",
+        "vertices": [
+          {
+            "x": -494.29998779296875,
+            "y": -297.8999938964844,
+            "z": 0
+          },
+          {
+            "x": 206.89999389648438,
+            "y": -297.8999938964844,
+            "z": 0
+          },
+          {
+            "x": 216.89999389648438,
+            "y": -307.8999938964844,
+            "z": 0
+          },
+          {
+            "x": -504.29998779296875,
+            "y": -307.8999938964844,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": 34.689612544235274,
+          "y": -125.66294587756872
+        },
+        "b": {
+          "x": 34.689612544235246,
+          "y": 21.14294587756865
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "46416a1e-107e-e3e1-94ae-b07092b8692a",
+        "corner2": "512235f5-0691-2900-2bf3-97daa87d4e9e",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "5.013m",
+        "vertices": [
+          {
+            "x": 206.89999389648438,
+            "y": -297.8999938964844,
+            "z": 0
+          },
+          {
+            "x": 206.89999389648438,
+            "y": 193.39999389648438,
+            "z": 0
+          },
+          {
+            "x": 216.89999389648438,
+            "y": 203.39999389648438,
+            "z": 0
+          },
+          {
+            "x": 216.89999389648438,
+            "y": -307.8999938964844,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": -39.547171389936466,
+          "y": -53.09383805660306
+        },
+        "b": {
+          "x": -247.85282861006388,
+          "y": -53.09383805660309
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "512235f5-0691-2900-2bf3-97daa87d4e9e",
+        "corner2": "5b7be61b-ee51-d1b0-1b55-46cd9c21a4f0",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "7.112m",
+        "vertices": [
+          {
+            "x": 206.89999389648438,
+            "y": 193.39999389648438,
+            "z": 0
+          },
+          {
+            "x": -494.29998779296875,
+            "y": 193.39999389648438,
+            "z": 0
+          },
+          {
+            "x": -504.29998779296875,
+            "y": 203.39999389648438,
+            "z": 0
+          },
+          {
+            "x": 216.89999389648438,
+            "y": 203.39999389648438,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      },
+      {
+        "a": {
+          "x": -322.0896125442356,
+          "y": 21.14294587756862
+        },
+        "b": {
+          "x": -322.0896125442356,
+          "y": -125.66294587756875
+        },
+        "backTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "corner1": "5b7be61b-ee51-d1b0-1b55-46cd9c21a4f0",
+        "corner2": "f595a4b4-83d1-fb31-3a40-a46951716fbd",
+        "frontTexture": {
+          "scale": 0,
+          "stretch": true,
+          "url": "rooms/textures/wallmap.png"
+        },
+        "length": "5.013m",
+        "vertices": [
+          {
+            "x": -494.29998779296875,
+            "y": 193.39999389648438,
+            "z": 0
+          },
+          {
+            "x": -494.29998779296875,
+            "y": -297.8999938964844,
+            "z": 0
+          },
+          {
+            "x": -504.29998779296875,
+            "y": -307.8999938964844,
+            "z": 0
+          },
+          {
+            "x": -504.29998779296875,
+            "y": 203.39999389648438,
+            "z": 0
+          }
+        ],
+        "wallType": "STRAIGHT"
+      }
+    ]
   },
   "items": [
     {
-      "item_name": "Doorway",
-      "item_type": 3,
-      "format": "gltf",
-      "model_url": "models/gltf/doorway.glb",
-      "xpos": -293.16311501639245,
-      "ypos": 152.4297604560852,
-      "zpos": -349.5,
-      "rotation": 0,
-      "scale_x": 300,
-      "scale_y": 300,
-      "scale_z": 300,
+      "breadth": 243.8,
       "fixed": false,
-      "material_colors": ["#e49964", "#bcd1d6"]
-    },
-    {
-      "item_name": "Closed Door",
-      "item_type": 7,
-      "model_url": "models/js/closed-door28x80_baked.js",
-      "xpos": 236.33797932169531,
-      "ypos": 110.80000022010701,
-      "zpos": -349.5,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
       "rotation": 0,
       "scale_x": 1,
       "scale_y": 1,
       "scale_z": 1,
-      "fixed": false,
-      "material_colors": ["#ffffff"]
+      "xpos": -418.0999877929687,
+      "ypos": 0.250005,
+      "zpos": -175.99999389648437
     },
     {
-      "item_name": "Red Chair",
-      "item_type": 1,
-      "model_url": "models/js/ik-ekero-orange_baked.js",
-      "xpos": 282.31735801191803,
-      "ypos": 37.50235073007,
-      "zpos": 113.24382781072796,
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
       "rotation": 0,
       "scale_x": 1,
       "scale_y": 1,
       "scale_z": 1,
-      "fixed": false,
-      "material_colors": ["#ffffff"]
+      "xpos": -418.0999877929687,
+      "ypos": 0.250005,
+      "zpos": 67.80000610351564
     },
     {
-      "item_name": "Full Bed",
-      "item_type": 1,
-      "model_url": "models/js/ik_nordli_full.js",
-      "xpos": 310.0690309502671,
-      "ypos": 50,
-      "zpos": -249.0776069070522,
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
       "rotation": 0,
       "scale_x": 1,
       "scale_y": 1,
       "scale_z": 1,
+      "xpos": -265.6999877929687,
+      "ypos": 0.250005,
+      "zpos": -175.99999389648437
+    },
+    {
+      "breadth": 243.8,
       "fixed": false,
-      "material_colors": ["#ffffff", "#b6b2a4", "#cccccc"]
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -265.6999877929687,
+      "ypos": 0.250005,
+      "zpos": 67.80000610351564
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -113.2999877929687,
+      "ypos": 0.250005,
+      "zpos": -175.99999389648437
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": -113.2999877929687,
+      "ypos": 0.250005,
+      "zpos": 67.80000610351564
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 39.10001220703134,
+      "ypos": 0.250005,
+      "zpos": -175.99999389648437
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 39.10001220703134,
+      "ypos": 0.250005,
+      "zpos": 67.80000610351564
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 0.6010497486184586,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 161.1000030517578,
+      "ypos": 0.250005,
+      "zpos": -175.99999389648437
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 0.6010497486184586,
+      "scale_y": 1,
+      "scale_z": 1,
+      "xpos": 161.1000030517578,
+      "ypos": 0.250005,
+      "zpos": 67.80000610351564
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 0.015176324007254828,
+      "xpos": 39.100012207031256,
+      "ypos": 0.250005,
+      "zpos": 191.55
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 0.015176324007254828,
+      "xpos": -113.29998779296875,
+      "ypos": 0.250005,
+      "zpos": 191.55
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 0.015176324007254828,
+      "xpos": -265.6999877929687,
+      "ypos": 0.250005,
+      "zpos": 191.55
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 1,
+      "scale_y": 1,
+      "scale_z": 0.015176324007254828,
+      "xpos": -418.0999877929688,
+      "ypos": 0.250005,
+      "zpos": 191.55
+    },
+    {
+      "breadth": 243.8,
+      "fixed": false,
+      "height": 0,
+      "item_name": "FL013 Prima Earthern Apple 1202x192 mm Laminate Wood Floor - 8 mm",
+      "item_type": 8,
+      "length": 152.4,
+      "material_colors": ["#ffffff"],
+      "model_url": "models/js/onFloorItems/fl013.js",
+      "rotation": 0,
+      "scale_x": 0.6010497486184586,
+      "scale_y": 1,
+      "scale_z": 0.015176324007254828,
+      "xpos": 161.1000030517578,
+      "ypos": 0.250005,
+      "zpos": 191.55
     }
   ],
   "vertices": [
     [
-      { "x": -495, "y": -345, "z": 0 },
-      { "x": -5, "y": -345, "z": 0 },
-      { "x": 5, "y": -355, "z": 0 },
-      { "x": -505, "y": -355, "z": 0 }
+      {
+        "x": -494.29998779296875,
+        "y": -297.8999938964844,
+        "z": 0
+      },
+      {
+        "x": 206.89999389648438,
+        "y": -297.8999938964844,
+        "z": 0
+      },
+      {
+        "x": 216.89999389648438,
+        "y": -307.8999938964844,
+        "z": 0
+      },
+      {
+        "x": -504.29998779296875,
+        "y": -307.8999938964844,
+        "z": 0
+      }
     ],
     [
-      { "x": -5, "y": -345, "z": 0 },
-      { "x": -5, "y": -55, "z": 0 },
-      { "x": 5, "y": -45, "z": 0 },
-      { "x": 5, "y": -355, "z": 0 }
+      {
+        "x": 206.89999389648438,
+        "y": -297.8999938964844,
+        "z": 0
+      },
+      {
+        "x": 206.89999389648438,
+        "y": 193.39999389648438,
+        "z": 0
+      },
+      {
+        "x": 216.89999389648438,
+        "y": 203.39999389648438,
+        "z": 0
+      },
+      {
+        "x": 216.89999389648438,
+        "y": -307.8999938964844,
+        "z": 0
+      }
     ],
     [
-      { "x": 5, "y": -55, "z": 0 },
-      { "x": 5, "y": -345, "z": 0 },
-      { "x": -5, "y": -355, "z": 0 },
-      { "x": -5, "y": -45, "z": 0 }
+      {
+        "x": 206.89999389648438,
+        "y": 193.39999389648438,
+        "z": 0
+      },
+      {
+        "x": -494.29998779296875,
+        "y": 193.39999389648438,
+        "z": 0
+      },
+      {
+        "x": -504.29998779296875,
+        "y": 203.39999389648438,
+        "z": 0
+      },
+      {
+        "x": 216.89999389648438,
+        "y": 203.39999389648438,
+        "z": 0
+      }
     ],
     [
-      { "x": -5, "y": -55, "z": 0 },
-      { "x": -495, "y": -55, "z": 0 },
-      { "x": -505, "y": -45, "z": 0 },
-      { "x": 5, "y": -45, "z": 0 }
-    ],
-    [
-      { "x": -495, "y": -45, "z": 0 },
-      { "x": -5, "y": -45, "z": 0 },
-      { "x": 5, "y": -55, "z": 0 },
-      { "x": -505, "y": -55, "z": 0 }
-    ],
-    [
-      { "x": -495, "y": -55, "z": 0 },
-      { "x": -495, "y": -345, "z": 0 },
-      { "x": -505, "y": -355, "z": 0 },
-      { "x": -505, "y": -45, "z": 0 }
-    ],
-    [
-      { "x": 5, "y": -345, "z": 0 },
-      { "x": 395, "y": -345, "z": 0 },
-      { "x": 405, "y": -355, "z": 0 },
-      { "x": -5, "y": -355, "z": 0 }
-    ],
-    [
-      { "x": 395, "y": -345, "z": 0 },
-      { "x": 395, "y": -55, "z": 0 },
-      { "x": 405, "y": -45, "z": 0 },
-      { "x": 405, "y": -355, "z": 0 }
-    ],
-    [
-      { "x": 395, "y": -55, "z": 0 },
-      { "x": 5, "y": -55, "z": 0 },
-      { "x": -5, "y": -45, "z": 0 },
-      { "x": 405, "y": -45, "z": 0 }
-    ],
-    [
-      { "x": 5, "y": -45, "z": 0 },
-      { "x": 395, "y": -45, "z": 0 },
-      { "x": 405, "y": -55, "z": 0 },
-      { "x": -5, "y": -55, "z": 0 }
-    ],
-    [
-      { "x": -495, "y": 195, "z": 0 },
-      { "x": -495, "y": -45, "z": 0 },
-      { "x": -505, "y": -55, "z": 0 },
-      { "x": -505, "y": 205, "z": 0 }
-    ],
-    [
-      { "x": -5, "y": 195, "z": 0 },
-      { "x": -495, "y": 195, "z": 0 },
-      { "x": -505, "y": 205, "z": 0 },
-      { "x": 5, "y": 205, "z": 0 }
-    ],
-    [
-      { "x": 5, "y": 195, "z": 0 },
-      { "x": 5, "y": -45, "z": 0 },
-      { "x": -5, "y": -55, "z": 0 },
-      { "x": -5, "y": 205, "z": 0 }
-    ],
-    [
-      { "x": -5, "y": -45, "z": 0 },
-      { "x": -5, "y": 195, "z": 0 },
-      { "x": 5, "y": 205, "z": 0 },
-      { "x": 5, "y": -55, "z": 0 }
-    ],
-    [
-      { "x": 395, "y": 195, "z": 0 },
-      { "x": 5, "y": 195, "z": 0 },
-      { "x": -5, "y": 205, "z": 0 },
-      { "x": 405, "y": 205, "z": 0 }
-    ],
-    [
-      { "x": 395, "y": -45, "z": 0 },
-      { "x": 395, "y": 195, "z": 0 },
-      { "x": 405, "y": 205, "z": 0 },
-      { "x": 405, "y": -55, "z": 0 }
+      {
+        "x": -494.29998779296875,
+        "y": 193.39999389648438,
+        "z": 0
+      },
+      {
+        "x": -494.29998779296875,
+        "y": -297.8999938964844,
+        "z": 0
+      },
+      {
+        "x": -504.29998779296875,
+        "y": -307.8999938964844,
+        "z": 0
+      },
+      {
+        "x": -504.29998779296875,
+        "y": 203.39999389648438,
+        "z": 0
+      }
     ]
   ]
 }

@@ -1,7 +1,7 @@
 const neo4j = require("neo4j-driver");
 
 class Neo4jgraph {
-  constructor(url, username, password,dbName ) {
+  constructor(url, username, password, dbName) {
     this.db = new neo4j.driver(url, neo4j.auth.basic(username, password));
     this.databaseName = dbName;
   }
@@ -30,20 +30,20 @@ class Neo4jgraph {
   }
 
   async allProducts() {
-    const data=[];
+    const data = [];
     try {
-        const query = "MATCH (p:Product) RETURN p";
+      const query = "MATCH (p:Product) RETURN p";
       const result = await this.query(query);
       //console.log(result);
-        await result.records.forEach(record => {
-            data.push(record.get("p").properties);
-        })
-        //console.log(data);
+      await result.records.forEach((record) => {
+        data.push(record.get("p").properties);
+      });
+      //console.log(data);
       return data;
     } catch (err) {
       return err;
     }
-}
+  }
 
   async getProductByType() {
     const laminates = [];
@@ -53,33 +53,33 @@ class Neo4jgraph {
       const onWallquery = `MATCH (p:Product)-[:has_catgorey]->(a:attributes)
 WHERE a.value = 'laminates'
 RETURN p`;
-     let result=await this.query(onWallquery);
+      let result = await this.query(onWallquery);
       console.log(result);
-     await result.records.forEach((record) => {
-       laminates.push(record.get("p").properties);
+      await result.records.forEach((record) => {
+        laminates.push(record.get("p").properties);
       });
       const onfloorquery = `MATCH (p:Product)-[:has_catgorey]->(a:attributes)
       WHERE a.value = 'tiles'
       RETURN p`;
-      let result1 =await this.query(onfloorquery);
+      let result1 = await this.query(onfloorquery);
       await result1.records.forEach((record) => {
         tiles.push(record.get("p").properties);
       });
       const onwallpaperquery = `MATCH (p:Product)-[:has_catgorey]->(a:attributes)
       WHERE a.value = 'wallpaper'
       RETURN p`;
-      let result2 =await this.query(onwallpaperquery);
-     await result2.records.forEach((record) => {
-       wallpaper.push(record.get("p").properties);
-     });
+      let result2 = await this.query(onwallpaperquery);
+      await result2.records.forEach((record) => {
+        wallpaper.push(record.get("p").properties);
+      });
       const data = { laminates: laminates, wallpaper: wallpaper, tiles: tiles };
       return data;
     } catch (err) {
-      return err
+      return err;
     }
   }
   async queryWithParams(query, params) {
-    const session = this.db.session({ database: this.databaseName });;
+    const session = this.db.session({ database: this.databaseName });
     try {
       const result = await session.run(query, params);
       return result;
@@ -95,23 +95,24 @@ RETURN p`;
       const query = `
             MATCH (n:${label})
             WHERE ${Object.keys(properties)
-              .map((key) => `n.${key} = "${properties[key]}"`)
+              .map((key) => `n.\`${key}\` = "${properties[key]}"`)
               .join(" AND ")}
             RETURN n
         `;
       const mainResult = await this.query(query, properties);
-      console.log(properties,mainResult);
+      console.log(properties, mainResult);
+
       if (mainResult?.records?.length === 0) {
         // Main node does not exist, create it
         const createMainResult = await this.queryWithParams(
           `CREATE (n:${label} {${Object.keys(properties)
-            .map((key) => `${key} :"${properties[key]}"`)
+            .map((key) => `\`${key}\` :"${properties[key]}"`)
             .join(" ,")}})
             RETURN n`,
           properties
         );
 
-        mainNode = createMainResult?.records[0].get('n').identity?.low;
+        mainNode = createMainResult?.records[0].get("n").identity?.low;
       } else {
         // Main node already exists
         mainNode = mainResult?.records[0]?.get(0).identity?.low;
@@ -123,7 +124,52 @@ RETURN p`;
       await session.close();
     }
   }
+  async createRoom(label, properties) {
+    const session = this.db.session({ database: this.databaseName });
+    let mainNode;
+    try {
+      // Check if main node with roomtype exists
+      const query = `
+            MATCH (n:${label} { name:"${properties.name}"})
+            RETURN n
+        `;
+      const mainResult = await this.query(query, properties);
 
+      if (mainResult?.records?.length === 0) {
+        // Main node does not exist, create it
+        const createMainResult = await this.queryWithParams(
+          `CREATE (n:${label} {${Object.keys(properties)
+            .map((key) => `\`${key}\` :"${properties[key]}"`)
+            .join(" ,")}})
+            RETURN n`,
+          properties
+        );
+
+        mainNode = createMainResult?.records[0].get("n").identity?.low;
+      } else {
+        // Main node already exists
+         const updateQuery = `
+        MATCH (n:${label} { name: $name })
+        SET n = $properties
+        RETURN n
+      `;
+
+         const updateMainResult = await this.queryWithParams(updateQuery, {
+           name: properties.name,
+           properties,
+         });
+        console.log(updateMainResult)
+         
+         mainNode = updateMainResult.records[0].get("n").identity.low;
+         console.log(properties, mainNode);
+      }
+      return mainNode;
+    } catch (e) {
+      return e;
+    } finally {
+      await session.close();
+    }
+  }
 
   async connectRoomToCornor(cornorNode, roomId, relationship) {
     try {
@@ -140,26 +186,26 @@ RETURN p`;
       //console.log(err);
     }
   }
-  async createWall(label,properties) {
+  async createWall(label, properties) {
     try {
-        const checkQuery = `
+      const checkQuery = `
       MATCH (w:Wall)
       WHERE (w.id1 = $id1 AND w.id2 = $id2) OR (w.id1 = $id2 AND w.id2 = $id1)
       RETURN w
     `;
 
-        const checkResult = await this.queryWithParams(checkQuery, {
-          id1: properties.id1,
-          id2: properties.id2,
-        });
+      const checkResult = await this.queryWithParams(checkQuery, {
+        id1: properties.id1,
+        id2: properties.id2,
+      });
 
-        if (checkResult.records.length > 0) {
-          //console.log(checkResult.records[0].get(0).identity.low);
-          return checkResult.records[0].get(0).identity.low;
-        }
+      if (checkResult.records.length > 0) {
+        //console.log(checkResult.records[0].get(0).identity.low);
+        return checkResult.records[0].get(0).identity.low;
+      }
 
-        // If no wall exists, create the new wall node
-        const createQuery = `
+      // If no wall exists, create the new wall node
+      const createQuery = `
       CREATE (w:${label} {
         id1: $id1,
         id2: $id2,
@@ -173,8 +219,8 @@ RETURN p`;
       RETURN w
     `;
 
-        const result = await this.queryWithParams(createQuery, properties);
-        const createdWall = result.records[0].get(0).identity.low;
+      const result = await this.queryWithParams(createQuery, properties);
+      const createdWall = result.records[0].get(0).identity.low;
       //console.log(createdWall);
       //console.log("hi");
       return createdWall;

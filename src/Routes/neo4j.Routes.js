@@ -209,6 +209,9 @@ async function createMultipleOpenings(values, mainNodeId, label, connection) {
 }
 
 router.post("/api/architect", async function (req, res) {
+  if (Object.keys(req.body).length ==0 ) {
+    return res.status(400).json({ error: "data Not found" });
+  }
   const data = req.body;
   const rooms = data.floorplan.rooms;
   const walls = data.floorplan.walls;
@@ -241,10 +244,11 @@ router.post("/api/architect", async function (req, res) {
 
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
-        const roomNode = await dbGraph.createNode("room", rooms[room]);
+        const roomNode = await dbGraph.createRoom("room", rooms[room]);
         // //console.log(room + ": " + rooms[room].name);
         const roomcornors = room.split(",");
         const length = roomcornors.length;
+        console.log(roomNode)
         walls.forEach(async (wall, index) => {
           if (
             roomcornors.includes(wall.corner1) &&
@@ -259,14 +263,6 @@ router.post("/api/architect", async function (req, res) {
               endY: cornors[wall.corner2].y,
               wallType: wall.wallType,
               lenght: wall.length,
-              // x1:data.vertices[index][0].x,
-              // y1: data.vertices[index][0].y,
-              // x2:data.vertices[index][1].x,
-              // y2: data.vertices[index][1].y,
-              // x3:data.vertices[index][2].x,
-              // y3: data.vertices[index][2].y,
-              // x4:data.vertices[index][3].x,
-              // y4: data.vertices[index][3].y,
             });
             //console.log(wallNode);
             const relation = await dbGraph.connectRoomToCornor(
@@ -278,11 +274,11 @@ router.post("/api/architect", async function (req, res) {
         });
       }
     }
+    res.json({ message: "success" });
   } catch (e) {
     //console.log(e);
-  } finally {
-    res.json({ message: "success" });
-  }
+    res.status(400).json({error:e})
+  } 
 });
 
 router.post("/api/graph", async function (req, res) {
