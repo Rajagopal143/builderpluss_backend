@@ -7,7 +7,7 @@ const xlsx = require("xlsx");
 // // Create Node
 router.post("/api/node", async (req, res) => {
   const { label, properties, message } = req.body;
-  const node = await db1.createRoomNode(label, properties);
+  const node = await dbGraph.createRoomNode(label, properties);
   return res.json({
     warning: message,
     node,
@@ -18,7 +18,7 @@ router.post("/api/node", async (req, res) => {
 router.get("/api/node/:id", async (req, res) => {
   const { id } = req.params;
 
-  const result = await db1.queryNodeById(Number(id));
+  const result = await dbGraph.queryNodeById(Number(id));
 
   res.json(result);
 });
@@ -28,14 +28,14 @@ router.put("/api/node/:id", async (req, res) => {
   const { id } = req.params;
   const { properties } = req.body;
 
-  const node = await db1.updateNode(id, properties);
+  const node = await dbGraph.updateNode(id, properties);
   res.json(node.properties);
 });
 
 // // Delete Node
 router.delete("/api/node/:id", async (req, res) => {
   const { id } = req.params;
-  const result = await db1.deleteNode(id);
+  const result = await dbGraph.deleteNode(id);
   res.json({
     message: "Node deleted",
     result: id,
@@ -45,7 +45,7 @@ router.delete("/api/node/:id", async (req, res) => {
 // // Add Relationship
 router.post("/api/relationship", async (req, res) => {
   const { startNodeId, endNodeId, type, properties } = req.body;
-  const result = await db1.createRelationship(
+  const result = await dbGraph.createRelationship(
     parseInt(startNodeId),
     parseInt(endNodeId),
     type,
@@ -56,7 +56,7 @@ router.post("/api/relationship", async (req, res) => {
 
 // //Return the connected nodes
 router.post("/api/mainNode", async (req, res) => {
-  const result = await db1.connectNodes(
+  const result = await dbGraph.connectNodes(
     req.body.startNode,
     req.body.endNodes,
     req.body.relationship
@@ -66,7 +66,7 @@ router.post("/api/mainNode", async (req, res) => {
 
 // //to connect Multiple Nodes
 router.post("/api/conectNode", async (req, res) => {
-  const result = await db1.connectNodesLinear(
+  const result = await dbGraph.connectNodesLinear(
     req.body.nodes,
     req.body.relationship,
     req.body.Noderelationship
@@ -75,13 +75,13 @@ router.post("/api/conectNode", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const result = await db1.query(`MATCH (n) RETURN n LIMIT 25`);
+  const result = await dbGraph.query(`MATCH (n) RETURN n LIMIT 25`);
   res.json(result);
 });
 
 router.post("/api/createRoom", async (req, res) => {
   const { nodeName, values } = req.body;
-  const result = await db1.createOrUpdateNodesAndRelation(nodeName, values);
+  const result = await dbGraph.createOrUpdateNodesAndRelation(nodeName, values);
   res.json({
     message: result,
   });
@@ -89,7 +89,7 @@ router.post("/api/createRoom", async (req, res) => {
 
 router.get("/api/getAjacentNodes", async function (req, res) {
   const { nodeType } = req.body;
-  const result = await db1.queryWithParams(
+  const result = await dbGraph.queryWithParams(
     `MATCH (:room {roomType:$nodeType})-[:cornor]->(cornorNode)<-[:cornor]-(room:room) RETURN room`,
     {
       nodeType: nodeType,
@@ -105,7 +105,7 @@ router.get("/api/getAjacentNodes", async function (req, res) {
 });
 
 router.get("/api/listRoom", async function (req, res) {
-  const result = await db1.query(`MATCH (n:room) RETURN n LIMIT 25`);
+  const result = await dbGraph.query(`MATCH (n:room) RETURN n LIMIT 25`);
   const room = result.records.map((room) => room.get(0).properties.roomType);
   res.json(room);
 });
@@ -125,7 +125,7 @@ async function createMultipleNodes(
     const { start, end } = properties;
 
     // Check if the node already exists
-    const result = await db1.queryWithParams(
+    const result = await dbGraph.queryWithParams(
       `MATCH (node:${label} { startx: $endx, starty: $endy, endx: $startx, endy: $starty }) RETURN node`,
       {
         startx: Math.floor(start.x),
@@ -140,7 +140,7 @@ async function createMultipleNodes(
 
     if (result.records.length === 0) {
       // Node does not exist, create it
-      const createResult = await db1.queryWithParams(
+      const createResult = await dbGraph.queryWithParams(
         `CREATE (n:${label} { startx: $startx, starty: $starty, endx: $endx, endy: $endy }) RETURN n`,
         {
           startx: Math.floor(start.x),
@@ -156,7 +156,7 @@ async function createMultipleNodes(
       nodeId = result.records[0].get(0).identity.low;
     }
     // Create relationship between main node and created/already existing node
-    const relationship = await db1.createRelationship(
+    const relationship = await dbGraph.createRelationship(
       mainNodeId,
       nodeId,
       connection,
@@ -174,7 +174,7 @@ async function createMultipleOpenings(values, mainNodeId, label, connection) {
 
   for (const properties of values) {
     // Check if the node already exists
-    const result = await db1.queryWithParams(
+    const result = await dbGraph.queryWithParams(
       `MATCH (node:${label}) WHERE node.elementId = $elementId RETURN node`,
       { elementId: properties }
     );
@@ -183,7 +183,7 @@ async function createMultipleOpenings(values, mainNodeId, label, connection) {
 
     if (result.records.length === 0) {
       // Node does not exist, create it
-      const createResult = await db1.queryWithParams(
+      const createResult = await dbGraph.queryWithParams(
         `CREATE (main:${label} {elementId: $elementId}) RETURN main `,
         { elementId: properties }
       );
@@ -195,7 +195,7 @@ async function createMultipleOpenings(values, mainNodeId, label, connection) {
     }
 
     // Create relationship between main node and created/already existing node
-    const relationship = await db1.createRelationship(
+    const relationship = await dbGraph.createRelationship(
       mainNodeId,
       elementNode,
       connection,
@@ -285,7 +285,7 @@ router.post("/api/graph", async function (req, res) {
   const roomArray = req.body.data;
   try {
     roomArray.forEach(async function (room, index) {
-      const roomNode = await db1.createRoomNode("room", {
+      const roomNode = await dbGraph.createRoomNode("room", {
         Name: room.Name,
       });
       const wallNode = await createMultipleNodes(
@@ -313,7 +313,7 @@ router.post("/api/graph", async function (req, res) {
 });
 router.get('/allNodes', async (req, res) => {
   try {
-    const data = await productGraph.allProducts();
+    const data = await dbGraph.allProducts();
     res.status(300).json(data);
   } catch (err) {
     res.status(404).json({ message: err.message });
@@ -332,7 +332,7 @@ router.post("/api/twodGraph", async function (req, res) {
       });
       for (const cornor of room.cornors) {
         const cornorNode = await dbGraph.createNode("cornor", { ...cornor });
-        const relation = await db1.createRelationship(
+        const relation = await dbGraph.createRelationship(
           roomNode,
           cornorNode,
           "cornor",

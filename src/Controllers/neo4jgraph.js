@@ -267,7 +267,7 @@ RETURN w`);
       exposedNode.records.forEach((record) => {
         const miniData = {};
         miniData["wallId"] = record.get(0).identity.low;
-        miniData["length"] = record.get(0).properties.lenght;
+        miniData["length"] = record.get(0).properties.length;
         data.push(miniData);
       });
 
@@ -293,7 +293,7 @@ RETURN w`);
       for (let record of exposedNode.records) {
         const miniData = {};
         miniData["wallId"] = record.get(0).identity.low;
-        miniData["length"] = record.get(0).properties.lenght;
+        miniData["length"] = record.get(0).properties.length;
         miniData["sharedRoom"] = await this.exposedRoom(
           record.get(0).identity.low,
           id
@@ -319,13 +319,7 @@ RETURN w`);
 
         data.push({
           WallId: r.get(0).identity.low,
-          length: r.get(0).properties.lenght,
-          vertices: [
-            { x: r.get(0).properties.x1, y: r.get(0).properties.y1 },
-            { x: r.get(0).properties.x2, y: r.get(0).properties.y2 },
-            { x: r.get(0).properties.x3, y: r.get(0).properties.y3 },
-            { x: r.get(0).properties.x4, y: r.get(0).properties.y4 },
-          ],
+          length: r.get(0).properties.length
         });
       });
       return data;
