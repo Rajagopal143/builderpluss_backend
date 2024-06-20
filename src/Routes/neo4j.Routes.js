@@ -4,6 +4,7 @@ const compareGraph = require("../middelwares/Compare.Middelware");
 
 const router = express.Router();
 const xlsx = require("xlsx");
+const Neo4jDatabase = require("../../neo4j");
 // // Create Node
 router.post("/api/node", async (req, res) => {
   const { label, properties, message } = req.body;
@@ -265,7 +266,7 @@ router.post("/api/architect", async function (req, res) {
               lenght: wall.length,
             });
             //console.log(wallNode);
-            const relation = await dbGraph.connectRoomToCornor(
+            const relation = await dbGraph.connectRoomToOther(
               wallNode,
               roomNode,
               "ifc_wall"
@@ -430,3 +431,23 @@ router.post("/api/product", async function (req, res) {
   }
   res.send("updated");
 });
+
+router.post("/api/productoroom", async function (req, res) {
+  const { roomName, products } = req.body;
+
+  try {
+  const roomNode = await dbGraph.getRoomByName(roomName);
+    console.log(roomNode)
+    if (roomNode) {
+      products.forEach(async(product) => {
+        const newProduct = await dbGraph.createNode("product", product)
+        const relation = await dbGraph.connectRoomToOther(newProduct, roomNode, "has_product");
+        console.log(relation)
+      })
+    }
+      
+    res.status(200).json({ message: relation });
+  } catch (err) {
+    res.status(400).json({ err: err });
+  }
+})

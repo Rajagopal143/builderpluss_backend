@@ -59,53 +59,45 @@ const changeRoomValues = async (req, res) => {
   }
   
 const addItems = async (req, res) => {
-  console.log("hi")
   const { itemtype, filepath } = req.body;
-    // try {
+    try {
       const data = fs.readFileSync("input.json");
       const jsonData = JSON.parse(data.toString());
       console.log(jsonData)
-      const items = jsonData.items;
+      const items = jsonData["items"];
       items.forEach(item => {
         if (Number(item["item_type"]) == Number(itemtype)) item["model_url"] = filepath;
       });
       
-      jsonData.floorplan["items"] = items;
+      jsonData["items"] = items;
      
 fs.writeFileSync("input.json", JSON.stringify(jsonData));
       res.status(200).json({ data: jsonData });
-  //   } catch (err) {
+    } catch (err) {
     
-  //   res.status(400).json({ data: err });
-  // }
+    res.status(400).json({ data: err });
+  }
 }
 
 
 const generatedData = async (req, res) => {
   const fileData = req.body;
-  console.log(fileData)
   const data = fs.readFileSync("input.json");
   const jsonData = JSON.parse(data.toString());
   jsonData["vertices"] = fileData
-  console.log(jsonData);
   fs.writeFileSync("input.json", JSON.stringify(jsonData));
   try {
     
-    fetch("http://127.0.0.1:5000/process", {
+  const response= await  fetch("http://127.0.0.1:5000/process", {
       method: "POST", // Important: Set method to POST
       headers: {
         "Content-Type": "application/json", // Set content type for JSON data
       },
       body: JSON.stringify(jsonData), // Convert object to JSON string
     })
-      .then((response) => response.json()) // Parse response as JSON
-      .then((data) => {
-        res.status(200).json(data);
-        return data;
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    const changeData =await response.json()// Parse response as JSON
+    console.log(changeData);
+    res.status(200).json(changeData)
   } catch (err) {
     res.status(400).json({error:err})
   }

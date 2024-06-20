@@ -94,6 +94,7 @@ const createProduct = async (filePath) => {
 };
 
 const ValueForFilter = async (req, res) => {
+  console.log("hi");
   try {
     const need = [
       "Color",

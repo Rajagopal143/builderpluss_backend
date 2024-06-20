@@ -20,15 +20,35 @@ class Neo4jgraph {
     const query = `MATCH (p:${label}) RETURN p`;
     const result = await this.query(query);
     const properties = [];
-    await result.records.forEach((element) => {
-      properties.push({
-        id: element.get(0).identity.low,
-        properties: element.get(0).properties,
+    if (result.records.length != 0) {
+      await result.records.forEach((element) => {
+        properties.push({
+          id: element.get(0).identity.low,
+          properties: element.get(0).properties,
+        });
       });
-    });
+    }
     return properties;
   }
+  async getRoomByName(roomName) {
+    try {
+      const result = await this.queryWithParams(
+        "MATCH (room:room {name: $name}) RETURN room",
+        { name: roomName }
+      );
 
+      if (result.records.length === 0) {
+        return null; // No room found
+      }
+
+      // Assuming there is only one room with the given name
+      const room = result?.records[0].get("room").identity?.low;;
+      return room;
+    } catch (error) {
+      console.error("Error querying room by name:", error);
+      throw error;
+    }
+  }
   async allProducts() {
     const data = [];
     try {
@@ -100,7 +120,6 @@ RETURN p`;
             RETURN n
         `;
       const mainResult = await this.query(query, properties);
-      console.log(properties, mainResult);
 
       if (mainResult?.records?.length === 0) {
         // Main node does not exist, create it
@@ -125,6 +144,7 @@ RETURN p`;
     }
   }
   async createRoom(label, properties) {
+    console.log(properties);
     const session = this.db.session({ database: this.databaseName });
     let mainNode;
     try {
@@ -148,20 +168,20 @@ RETURN p`;
         mainNode = createMainResult?.records[0].get("n").identity?.low;
       } else {
         // Main node already exists
-         const updateQuery = `
+        const updateQuery = `
         MATCH (n:${label} { name: $name })
         SET n = $properties
         RETURN n
       `;
 
-         const updateMainResult = await this.queryWithParams(updateQuery, {
-           name: properties.name,
-           properties,
-         });
-        console.log(updateMainResult)
-         
-         mainNode = updateMainResult.records[0].get("n").identity.low;
-         console.log(properties, mainNode);
+        const updateMainResult = await this.queryWithParams(updateQuery, {
+          name: properties.name,
+          properties,
+        });
+        console.log(updateMainResult);
+
+        mainNode = updateMainResult.records[0].get("n").identity.low;
+        console.log(properties, mainNode);
       }
       return mainNode;
     } catch (e) {
@@ -171,7 +191,7 @@ RETURN p`;
     }
   }
 
-  async connectRoomToCornor(cornorNode, roomId, relationship) {
+  async connectRoomToOther(cornorNode, roomId, relationship) {
     try {
       var relation = null;
       relation = await this.query(`
@@ -319,7 +339,7 @@ RETURN w`);
 
         data.push({
           WallId: r.get(0).identity.low,
-          length: r.get(0).properties.length
+          length: r.get(0).properties.length,
         });
       });
       return data;
