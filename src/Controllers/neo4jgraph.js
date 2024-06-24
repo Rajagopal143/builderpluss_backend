@@ -20,7 +20,7 @@ class Neo4jgraph {
     const query = `MATCH (p:${label}) RETURN p`;
     const result = await this.query(query);
     const properties = [];
-    if (result.records.length != 0) {
+    if (result?.records?.length != 0) {
       await result.records.forEach((element) => {
         properties.push({
           id: element.get(0).identity.low,
@@ -42,7 +42,7 @@ class Neo4jgraph {
       }
 
       // Assuming there is only one room with the given name
-      const room = result?.records[0].get("room").identity?.low;;
+      const room = result?.records[0].get("room").identity?.low;
       return room;
     } catch (error) {
       console.error("Error querying room by name:", error);
@@ -60,6 +60,30 @@ class Neo4jgraph {
       });
       //console.log(data);
       return data;
+    } catch (err) {
+      return err;
+    }
+  }
+  async getConnectedProducts(roomid) {
+    const data = [];
+    try {
+      const query = `MATCH (r:room)-[:has_product]->(p:product)
+      WHERE id(r) = ${roomid}
+      RETURN r, collect(p) as products`;
+      const result = await this.query(query);
+      if (result.records.length === 0) {
+        return null; // No room found
+      }
+
+      const record = result.records[0];
+      const room = record.get("r").properties;
+      console.log(room);
+      const products = record
+        .get("products")
+        .map((product) => product.properties);
+
+      //console.log(data);
+      return products;
     } catch (err) {
       return err;
     }
@@ -190,7 +214,7 @@ RETURN p`;
       await session.close();
     }
   }
-
+  async getProductbyRoomId() {}
   async connectRoomToOther(cornorNode, roomId, relationship) {
     try {
       var relation = null;
@@ -248,10 +272,10 @@ RETURN p`;
       //console.log(e);
     }
   }
-  async queryCornorNodes(cornorid) {
+  async queryNodeById(id) {
     try {
       const result = await this.query(
-        `MATCH (n:Wall) WHERE n.id="${cornorid}" RETURN n`
+        `MATCH (n) WHERE n.id="${id}" RETURN n`
       );
       return result.records[0]?.get(0)?.identity.low;
     } catch (err) {
@@ -259,12 +283,12 @@ RETURN p`;
     }
   }
 
-  async createMultipleRelation(id, MainNode, type) {
+  async createMultipleRelation(endId, startId, type) {
     try {
       var relation = null;
       relation = await this.query(`
         MATCH (a),(b)
-        WHERE ID(a) = ${MainNode} AND ID(b) = ${id}
+        WHERE ID(a) = ${startId} AND ID(b) = ${endId}
         MERGE  (a)-[:has_${type}]->(b)
         RETURN a, b
         `);

@@ -218,30 +218,6 @@ router.post("/api/architect", async function (req, res) {
   const walls = data.floorplan.walls;
   const cornors = data.floorplan.corners;
   try {
-    // for (let wall of walls) {
-    // //console.log(wall.corner1);
-    //       const cornor1 = {
-    //           x: cornors[wall.corner1].x,
-    //           y: cornors[wall.corner1].y,
-    //         };
-
-    //         const cornor2 = {
-    //             x: cornors[wall.corner2].x,
-    //             y: cornors[wall.corner2].y,
-    //           };
-    //           const wallNode = await dbGraph.createNode("Wall", {
-    //               id1: wall.corner1,
-    //               id2: wall.corner2,
-    //               startX: cornor1.x,
-    //               startY: cornor1.y,
-    //               endX: cornor2.x,
-    //               endY: cornor2.y,
-    //               wallType: wall.wallType,
-    //               lenght:wall.length
-    //             });
-    // //console.log(wallNode);
-    //         }
-    // //console.log(data);
 
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
@@ -249,12 +225,12 @@ router.post("/api/architect", async function (req, res) {
         // //console.log(room + ": " + rooms[room].name);
         const roomcornors = room.split(",");
         const length = roomcornors.length;
-        console.log(roomNode)
         walls.forEach(async (wall, index) => {
           if (
             roomcornors.includes(wall.corner1) &&
             roomcornors.includes(wall.corner2)
           ) {
+            console.log(wall);
             const wallNode = await dbGraph.createWall("Wall", {
               id1: wall.corner1,
               id2: wall.corner2,
@@ -371,6 +347,7 @@ router.get("/api/getgraph", async function (req, res) {
     roomData["Walls"] = await dbGraph.getWallByRoomId(room.id);
     roomData["ExposedWall"] = await dbGraph.queryExposedWall(room.id);
     roomData["SharedWalls"] = await dbGraph.querySharedWall(room.id);
+    roomData["products"] = await dbGraph.getConnectedProducts(room.id)
     data.push(roomData);
   }
   // const walldata=[]
@@ -434,20 +411,46 @@ router.post("/api/product", async function (req, res) {
 
 router.post("/api/productoroom", async function (req, res) {
   const { roomName, products } = req.body;
-
+  console.log(products)
   try {
   const roomNode = await dbGraph.getRoomByName(roomName);
-    console.log(roomNode)
     if (roomNode) {
       products.forEach(async(product) => {
-        const newProduct = await dbGraph.createNode("product", product)
+        const newProduct = await dbGraph.createRoom("product", product);
         const relation = await dbGraph.connectRoomToOther(newProduct, roomNode, "has_product");
-        console.log(relation)
       })
     }
       
-    res.status(200).json({ message: relation });
+    res.status(200).json({ message: "Product Added Succsusfully" });
   } catch (err) {
     res.status(400).json({ err: err });
   }
 })
+
+router.post("/api/addwallprops", async function (req, res) {
+  const { direction, doortype, windowtype, windowwidth, windowheight, doorwidth, doorheight, wallId } = req.body;
+  console.log(
+    direction,
+    doortype,
+    windowtype,
+    windowwidth,
+    windowheight,
+    doorwidth,
+    doorheight,
+    wallId
+  );
+  try {
+    const wallNode = await dbGraph.queryNodeById(wallId);
+    if(wallNode) return new Error("wall Node Note found")
+    const directionNode = await dbGraph.createNode("direction", { direction });
+    const doortypeNode = await dbGraph.createNode("doortype", { doortype });
+    const windowtypeNode = await dbGraph.createNode("windowtype", {
+      windowtype,
+    });
+    const directionNode = await dbGraph.createNode("direction", { direction });
+
+    res.status(200).json({message:"Properties Added"})
+  } catch (err) {
+    res.status(400).json({message:err.message})
+  }
+});

@@ -34,15 +34,15 @@ const changeRoomValues = async (req, res) => {
     
     
     jsonData.floorplan.corners[cornorkey[1]].x = 0;
-    jsonData.floorplan.corners[cornorkey[1]].y = length;
+    jsonData.floorplan.corners[cornorkey[1]].y = breadth;
     jsonData.floorplan.corners[cornorkey[1]].elevation = height;
     
-    jsonData.floorplan.corners[cornorkey[2]].x = breadth;
-    jsonData.floorplan.corners[cornorkey[2]].y = length;
+    jsonData.floorplan.corners[cornorkey[2]].x = length;
+    jsonData.floorplan.corners[cornorkey[2]].y = breadth;
     jsonData.floorplan.corners[cornorkey[2]].elevation = height;
     console.log(jsonData);
 
-    jsonData.floorplan.corners[cornorkey[3]].x = breadth;
+    jsonData.floorplan.corners[cornorkey[3]].x = length;
     jsonData.floorplan.corners[cornorkey[3]].y = 0;
     jsonData.floorplan.corners[cornorkey[3]].elevation = height;
     const roomkey = Object.keys(jsonData.floorplan.rooms);

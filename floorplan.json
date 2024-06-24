@@ -1,449 +1,1232 @@
 [
   {
-    "area": "33.232m²",
-    "name": "4 Pax Meeting (2)",
+    "area": "3.507m²",
+    "name": "Waiting",
     "Walls": [
       {
-        "WallId": 91,
-        "length": "10.276m"
+        "WallId": 97,
+        "length": "1.488m"
       },
       {
-        "WallId": 90,
-        "length": "3.559m"
-      },
-      {
-        "WallId": 93,
-        "length": "1.943m"
-      },
-      {
-        "WallId": 100,
-        "length": "9.899m"
+        "WallId": 2,
+        "length": "3.12m"
       },
       {
         "WallId": 96,
-        "length": "0.783m"
+        "length": "0.683m"
       },
       {
-        "WallId": 84,
-        "length": "2.734m"
-      },
-      {
-        "WallId": 146,
-        "length": "20.13m"
-      },
-      {
-        "WallId": 149,
-        "length": "5.311m"
-      },
-      {
-        "WallId": 147,
-        "length": "2.28m"
-      },
-      {
-        "WallId": 148,
-        "length": "5.575m"
-      },
-      {
-        "WallId": 82,
-        "length": "1.422m"
-      },
-      {
-        "WallId": 95,
-        "length": "0.738m"
-      },
-      {
-        "WallId": 97,
-        "length": "0.787m"
-      },
-      {
-        "WallId": 86,
-        "length": "10.094m"
-      },
-      {
-        "WallId": 98,
-        "length": "2.692m"
-      },
-      {
-        "WallId": 92,
-        "length": "0.804m"
-      },
-      {
-        "WallId": 74,
-        "length": "1.365m"
-      },
-      {
-        "WallId": 77,
-        "length": "1.365m"
-      },
-      {
-        "WallId": 79,
-        "length": "2.222m"
-      },
-      {
-        "WallId": 80,
-        "length": "2.252m"
-      },
-      {
-        "WallId": 81,
-        "length": "2.392m"
+        "WallId": 4,
+        "length": "3.491m"
       }
     ],
-    "ExposedWall": [
-      {
-        "wallId": 146,
-        "length": "20.13m"
-      },
-      {
-        "wallId": 149,
-        "length": "5.311m"
-      },
-      {
-        "wallId": 77,
-        "length": "1.365m"
-      },
-      {
-        "wallId": 79,
-        "length": "2.222m"
-      },
-      {
-        "wallId": 80,
-        "length": "2.252m"
-      }
-    ],
+    "ExposedWall": [],
     "SharedWalls": [
       {
-        "wallId": 91,
-        "length": "10.276m",
+        "wallId": 97,
+        "length": "1.488m",
         "sharedRoom": [
           {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
           }
         ]
       },
       {
-        "wallId": 90,
-        "length": "3.559m",
+        "wallId": 2,
+        "length": "3.12m",
         "sharedRoom": [
           {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 93,
-        "length": "1.943m",
-        "sharedRoom": [
-          {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 100,
-        "length": "9.899m",
-        "sharedRoom": [
-          {
-            "roomId": 136,
-            "RoomName": "WorkSpace 2"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 122,
+            "RoomName": "Reception"
           }
         ]
       },
       {
         "wallId": 96,
-        "length": "0.783m",
+        "length": "0.683m",
         "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 84,
-        "length": "2.734m",
-        "sharedRoom": [
-          {
-            "roomId": 2,
-            "RoomName": "Poduct Display Area"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 147,
-        "length": "2.28m",
-        "sharedRoom": [
-          {
-            "roomId": 150,
-            "RoomName": "18 Pax Meeting Room"
-          }
-        ]
-      },
-      {
-        "wallId": 148,
-        "length": "5.575m",
-        "sharedRoom": [
-          {
-            "roomId": 150,
-            "RoomName": "18 Pax Meeting Room"
-          }
-        ]
-      },
-      {
-        "wallId": 82,
-        "length": "1.422m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
+            "roomId": 91,
             "RoomName": "Circulation Area 3"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
           }
         ]
       },
       {
-        "wallId": 95,
-        "length": "0.738m",
+        "wallId": 4,
+        "length": "3.491m",
         "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          },
+            "roomId": 5,
+            "RoomName": "Builder Area (2)"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "39.453m²",
+    "name": "Builder Area (2)",
+    "Walls": [
+      {
+        "WallId": 1,
+        "length": "1.94m"
+      },
+      {
+        "WallId": 7,
+        "length": "9.176m"
+      },
+      {
+        "WallId": 112,
+        "length": "2.692m"
+      },
+      {
+        "WallId": 8,
+        "length": "4.291m"
+      },
+      {
+        "WallId": 4,
+        "length": "3.491m"
+      },
+      {
+        "WallId": 98,
+        "length": "1.053m"
+      },
+      {
+        "WallId": 6,
+        "length": "4.301m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 6,
+        "length": "4.301m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 1,
+        "length": "1.94m",
+        "sharedRoom": [
           {
-            "roomId": 111,
-            "RoomName": "Circulation Area 1"
+            "roomId": 122,
+            "RoomName": "Reception"
           }
         ]
       },
       {
-        "wallId": 97,
-        "length": "0.787m",
+        "wallId": 7,
+        "length": "9.176m",
         "sharedRoom": [
           {
-            "roomId": 133,
-            "RoomName": "Circulation Area 2"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 38,
+            "RoomName": "Builder Area (1)"
           }
         ]
       },
       {
-        "wallId": 86,
-        "length": "10.094m",
+        "wallId": 112,
+        "length": "2.692m",
         "sharedRoom": [
           {
-            "roomId": 85,
-            "RoomName": "WorkSpace 1"
-          },
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 8,
+        "length": "4.291m",
+        "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 42,
+            "RoomName": "President Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 4,
+        "length": "3.491m",
+        "sharedRoom": [
+          {
+            "roomId": 3,
+            "RoomName": "Waiting"
           }
         ]
       },
       {
         "wallId": 98,
-        "length": "2.692m",
+        "length": "1.053m",
         "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          },
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "3.384m²",
+    "name": "Circulation Area 1",
+    "Walls": [
+      {
+        "WallId": 12,
+        "length": "1.393m"
+      },
+      {
+        "WallId": 13,
+        "length": "1.169m"
+      },
+      {
+        "WallId": 10,
+        "length": "0.755m"
+      },
+      {
+        "WallId": 11,
+        "length": "1.951m"
+      },
+      {
+        "WallId": 111,
+        "length": "0.738m"
+      },
+      {
+        "WallId": 106,
+        "length": "4.477m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 10,
+        "length": "0.755m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 12,
+        "length": "1.393m",
+        "sharedRoom": [
           {
-            "roomId": 107,
+            "roomId": 27,
+            "RoomName": "4 Pax Meeting (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 13,
+        "length": "1.169m",
+        "sharedRoom": [
+          {
+            "roomId": 29,
+            "RoomName": "Fire Safe Strong Room"
+          }
+        ]
+      },
+      {
+        "wallId": 11,
+        "length": "1.951m",
+        "sharedRoom": [
+          {
+            "roomId": 14,
+            "RoomName": "Sr Manager Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 111,
+        "length": "0.738m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 106,
+        "length": "4.477m",
+        "sharedRoom": [
+          {
+            "roomId": 104,
+            "RoomName": "WorkSpace 1"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "3.851m²",
+    "name": "Sr Manager Cabin",
+    "Walls": [
+      {
+        "WallId": 16,
+        "length": "1.974m"
+      },
+      {
+        "WallId": 18,
+        "length": "1.974m"
+      },
+      {
+        "WallId": 17,
+        "length": "0.261m"
+      },
+      {
+        "WallId": 15,
+        "length": "1.69m"
+      },
+      {
+        "WallId": 11,
+        "length": "1.951m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 18,
+        "length": "1.974m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 16,
+        "length": "1.974m",
+        "sharedRoom": [
+          {
+            "roomId": 27,
+            "RoomName": "4 Pax Meeting (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 17,
+        "length": "0.261m",
+        "sharedRoom": [
+          {
+            "roomId": 23,
+            "RoomName": "6 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 15,
+        "length": "1.69m",
+        "sharedRoom": [
+          {
+            "roomId": 19,
+            "RoomName": "6 Pax Meeting (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 11,
+        "length": "1.951m",
+        "sharedRoom": [
+          {
+            "roomId": 9,
+            "RoomName": "Circulation Area 1"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "2.648m²",
+    "name": "6 Pax Meeting (1)",
+    "Walls": [
+      {
+        "WallId": 22,
+        "length": "1.69m"
+      },
+      {
+        "WallId": 21,
+        "length": "1.567m"
+      },
+      {
+        "WallId": 20,
+        "length": "1.567m"
+      },
+      {
+        "WallId": 15,
+        "length": "1.69m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 20,
+        "length": "1.567m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 22,
+        "length": "1.69m",
+        "sharedRoom": [
+          {
+            "roomId": 31,
+            "RoomName": "Circulation Area 2"
+          }
+        ]
+      },
+      {
+        "wallId": 21,
+        "length": "1.567m",
+        "sharedRoom": [
+          {
+            "roomId": 23,
+            "RoomName": "6 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 15,
+        "length": "1.69m",
+        "sharedRoom": [
+          {
+            "roomId": 14,
+            "RoomName": "Sr Manager Cabin"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "2.592m²",
+    "name": "6 Pax Meeting (2)",
+    "Walls": [
+      {
+        "WallId": 25,
+        "length": "1.654m"
+      },
+      {
+        "WallId": 17,
+        "length": "0.261m"
+      },
+      {
+        "WallId": 26,
+        "length": "1.567m"
+      },
+      {
+        "WallId": 24,
+        "length": "1.393m"
+      },
+      {
+        "WallId": 21,
+        "length": "1.567m"
+      }
+    ],
+    "ExposedWall": [],
+    "SharedWalls": [
+      {
+        "wallId": 25,
+        "length": "1.654m",
+        "sharedRoom": [
+          {
+            "roomId": 31,
+            "RoomName": "Circulation Area 2"
+          }
+        ]
+      },
+      {
+        "wallId": 17,
+        "length": "0.261m",
+        "sharedRoom": [
+          {
+            "roomId": 14,
+            "RoomName": "Sr Manager Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 26,
+        "length": "1.567m",
+        "sharedRoom": [
+          {
+            "roomId": 29,
+            "RoomName": "Fire Safe Strong Room"
+          }
+        ]
+      },
+      {
+        "wallId": 24,
+        "length": "1.393m",
+        "sharedRoom": [
+          {
+            "roomId": 27,
+            "RoomName": "4 Pax Meeting (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 21,
+        "length": "1.567m",
+        "sharedRoom": [
+          {
+            "roomId": 19,
+            "RoomName": "6 Pax Meeting (1)"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "2.75m²",
+    "name": "4 Pax Meeting (1)",
+    "Walls": [
+      {
+        "WallId": 16,
+        "length": "1.974m"
+      },
+      {
+        "WallId": 24,
+        "length": "1.393m"
+      },
+      {
+        "WallId": 28,
+        "length": "1.974m"
+      },
+      {
+        "WallId": 12,
+        "length": "1.393m"
+      }
+    ],
+    "ExposedWall": [],
+    "SharedWalls": [
+      {
+        "wallId": 16,
+        "length": "1.974m",
+        "sharedRoom": [
+          {
+            "roomId": 14,
+            "RoomName": "Sr Manager Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 24,
+        "length": "1.393m",
+        "sharedRoom": [
+          {
+            "roomId": 23,
+            "RoomName": "6 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 28,
+        "length": "1.974m",
+        "sharedRoom": [
+          {
+            "roomId": 29,
+            "RoomName": "Fire Safe Strong Room"
+          }
+        ]
+      },
+      {
+        "wallId": 12,
+        "length": "1.393m",
+        "sharedRoom": [
+          {
+            "roomId": 9,
+            "RoomName": "Circulation Area 1"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "4.15m²",
+    "name": "Fire Safe Strong Room",
+    "Walls": [
+      {
+        "WallId": 13,
+        "length": "1.169m"
+      },
+      {
+        "WallId": 26,
+        "length": "1.567m"
+      },
+      {
+        "WallId": 110,
+        "length": "3.559m"
+      },
+      {
+        "WallId": 30,
+        "length": "1.169m"
+      },
+      {
+        "WallId": 28,
+        "length": "1.974m"
+      }
+    ],
+    "ExposedWall": [],
+    "SharedWalls": [
+      {
+        "wallId": 13,
+        "length": "1.169m",
+        "sharedRoom": [
+          {
+            "roomId": 9,
+            "RoomName": "Circulation Area 1"
+          }
+        ]
+      },
+      {
+        "wallId": 26,
+        "length": "1.567m",
+        "sharedRoom": [
+          {
+            "roomId": 23,
+            "RoomName": "6 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 110,
+        "length": "3.559m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 30,
+        "length": "1.169m",
+        "sharedRoom": [
+          {
+            "roomId": 31,
+            "RoomName": "Circulation Area 2"
+          }
+        ]
+      },
+      {
+        "wallId": 28,
+        "length": "1.974m",
+        "sharedRoom": [
+          {
+            "roomId": 27,
+            "RoomName": "4 Pax Meeting (1)"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "3.513m²",
+    "name": "Circulation Area 2",
+    "Walls": [
+      {
+        "WallId": 113,
+        "length": "0.787m"
+      },
+      {
+        "WallId": 32,
+        "length": "0.784m"
+      },
+      {
+        "WallId": 30,
+        "length": "1.169m"
+      },
+      {
+        "WallId": 33,
+        "length": "4.448m"
+      },
+      {
+        "WallId": 22,
+        "length": "1.69m"
+      },
+      {
+        "WallId": 25,
+        "length": "1.654m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 32,
+        "length": "0.784m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 113,
+        "length": "0.787m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 30,
+        "length": "1.169m",
+        "sharedRoom": [
+          {
+            "roomId": 29,
+            "RoomName": "Fire Safe Strong Room"
+          }
+        ]
+      },
+      {
+        "wallId": 33,
+        "length": "4.448m",
+        "sharedRoom": [
+          {
+            "roomId": 34,
+            "RoomName": "WorkSpace 2"
+          }
+        ]
+      },
+      {
+        "wallId": 22,
+        "length": "1.69m",
+        "sharedRoom": [
+          {
+            "roomId": 19,
+            "RoomName": "6 Pax Meeting (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 25,
+        "length": "1.654m",
+        "sharedRoom": [
+          {
+            "roomId": 23,
+            "RoomName": "6 Pax Meeting (2)"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "44.031m²",
+    "name": "WorkSpace 2",
+    "Walls": [
+      {
+        "WallId": 36,
+        "length": "9.899m"
+      },
+      {
+        "WallId": 37,
+        "length": "0.349m"
+      },
+      {
+        "WallId": 35,
+        "length": "4.099m"
+      },
+      {
+        "WallId": 33,
+        "length": "4.448m"
+      },
+      {
+        "WallId": 109,
+        "length": "9.899m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 36,
+        "length": "9.899m"
+      },
+      {
+        "wallId": 37,
+        "length": "0.349m"
+      },
+      {
+        "wallId": 35,
+        "length": "4.099m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 33,
+        "length": "4.448m",
+        "sharedRoom": [
+          {
+            "roomId": 31,
+            "RoomName": "Circulation Area 2"
+          }
+        ]
+      },
+      {
+        "wallId": 109,
+        "length": "9.899m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "54.294m²",
+    "name": "Builder Area (1)",
+    "Walls": [
+      {
+        "WallId": 39,
+        "length": "5.946m"
+      },
+      {
+        "WallId": 41,
+        "length": "9.176m"
+      },
+      {
+        "WallId": 40,
+        "length": "5.888m"
+      },
+      {
+        "WallId": 7,
+        "length": "9.176m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 41,
+        "length": "9.176m"
+      },
+      {
+        "wallId": 40,
+        "length": "5.888m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 39,
+        "length": "5.946m",
+        "sharedRoom": [
+          {
+            "roomId": 42,
+            "RoomName": "President Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 7,
+        "length": "9.176m",
+        "sharedRoom": [
+          {
+            "roomId": 5,
+            "RoomName": "Builder Area (2)"
+          }
+        ]
+      }
+    ],
+    "products": null
+  },
+  {
+    "area": "19.928m²",
+    "name": "President Cabin",
+    "Walls": [
+      {
+        "WallId": 39,
+        "length": "5.946m"
+      },
+      {
+        "WallId": 43,
+        "length": "1.943m"
+      },
+      {
+        "WallId": 114,
+        "length": "10.276m"
+      },
+      {
+        "WallId": 8,
+        "length": "4.291m"
+      },
+      {
+        "WallId": 115,
+        "length": "1.943m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 43,
+        "length": "1.943m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 39,
+        "length": "5.946m",
+        "sharedRoom": [
+          {
+            "roomId": 38,
+            "RoomName": "Builder Area (1)"
+          }
+        ]
+      },
+      {
+        "wallId": 114,
+        "length": "10.276m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 8,
+        "length": "4.291m",
+        "sharedRoom": [
+          {
+            "roomId": 5,
             "RoomName": "Builder Area (2)"
           }
         ]
       },
       {
-        "wallId": 92,
-        "length": "0.804m",
+        "wallId": 115,
+        "length": "1.943m",
         "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 74,
-        "length": "1.365m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      },
-      {
-        "wallId": 81,
-        "length": "2.392m",
-        "sharedRoom": [
-          {
-            "roomId": 101,
-            "RoomName": "Reception"
+            "roomId": 108,
+            "RoomName": "Main Coridor"
           }
         ]
       }
+    ],
+    "products": null
+  },
+  {
+    "area": "28.683m²",
+    "name": "Training Room 2",
+    "Walls": [
+      {
+        "WallId": 48,
+        "length": "6.299m"
+      },
+      {
+        "WallId": 49,
+        "length": "4.56m"
+      },
+      {
+        "WallId": 45,
+        "length": "4.56m"
+      },
+      {
+        "WallId": 117,
+        "length": "6.281m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 48,
+        "length": "6.299m"
+      },
+      {
+        "wallId": 49,
+        "length": "4.56m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 45,
+        "length": "4.56m",
+        "sharedRoom": [
+          {
+            "roomId": 86,
+            "RoomName": "4 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 117,
+        "length": "6.281m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "No": "2",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?933.32 /Sheet",
+        "name": "9139 MG BianCO White Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "9139 MG BianCO White Marble Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Maxx Gloss Marble textures Finish Laminate with size of 8 ft x 4 ft of thickness 0.8 mm. Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYxSFAr5RiyF5l5aO0qGfSg-3OpQVwYoNxUA5lUoZeH5oD_oI0SYr6-tbrdNjnKvGGYPcs5uAojsqEdTZdjIrWAf1nb7n15Ow=w1366-h635"
+      },
+      {
+        "No": "1",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?2194.47 /Sheet",
+        "name": "9139 MG BianCO White Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "2913 Aris Stone PVC Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Gloss Of Marble textures Finish PVC Laminate with size of 8 ft x 4 ft of thickness 1.25 mm. PVC Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbw9cTL4ctddsqQn-zwRHA240n9p2ilmc3GEybwEQpQZ_7yqAZCjl6QwRzwX-CXaQNoi6MjwHwkJI42Q85y0tzNbnar07QN3w=w1366-h635"
+      }
     ]
+  },
+  {
+    "area": "20.999m²",
+    "name": "4 Pax Meeting (2)",
+    "Walls": [
+      {
+        "WallId": 121,
+        "length": "4.605m"
+      },
+      {
+        "WallId": 44,
+        "length": "4.605m"
+      },
+      {
+        "WallId": 45,
+        "length": "4.56m"
+      },
+      {
+        "WallId": 118,
+        "length": "4.56m"
+      },
+      {
+        "WallId": 89,
+        "length": "2.392m"
+      },
+      {
+        "WallId": 88,
+        "length": "2.252m"
+      },
+      {
+        "WallId": 87,
+        "length": "2.222m"
+      },
+      {
+        "WallId": 90,
+        "length": "1.365m"
+      }
+    ],
+    "ExposedWall": [
+      {
+        "wallId": 44,
+        "length": "4.605m"
+      },
+      {
+        "wallId": 88,
+        "length": "2.252m"
+      },
+      {
+        "wallId": 87,
+        "length": "2.222m"
+      }
+    ],
+    "SharedWalls": [
+      {
+        "wallId": 121,
+        "length": "4.605m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 45,
+        "length": "4.56m",
+        "sharedRoom": [
+          {
+            "roomId": 47,
+            "RoomName": "Training Room 2"
+          }
+        ]
+      },
+      {
+        "wallId": 118,
+        "length": "4.56m",
+        "sharedRoom": [
+          {
+            "roomId": 108,
+            "RoomName": "Main Coridor"
+          }
+        ]
+      },
+      {
+        "wallId": 89,
+        "length": "2.392m",
+        "sharedRoom": [
+          {
+            "roomId": 122,
+            "RoomName": "Reception"
+          }
+        ]
+      },
+      {
+        "wallId": 90,
+        "length": "1.365m",
+        "sharedRoom": [
+          {
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
+          }
+        ]
+      }
+    ],
+    "products": null
   },
   {
     "area": "7.649m²",
     "name": "Circulation Area 3",
     "Walls": [
       {
-        "WallId": 75,
-        "length": "3.533m"
-      },
-      {
-        "WallId": 78,
+        "WallId": 93,
         "length": "1.642m"
       },
       {
-        "WallId": 73,
-        "length": "1.488m"
+        "WallId": 90,
+        "length": "1.365m"
       },
       {
-        "WallId": 4,
-        "length": "4.17m"
+        "WallId": 95,
+        "length": "3.533m"
       },
       {
-        "WallId": 82,
-        "length": "1.422m"
-      },
-      {
-        "WallId": 72,
-        "length": "0.683m"
-      },
-      {
-        "WallId": 76,
-        "length": "1.053m"
-      },
-      {
-        "WallId": 3,
+        "WallId": 94,
         "length": "1.256m"
       },
       {
-        "WallId": 74,
-        "length": "1.365m"
+        "WallId": 97,
+        "length": "1.488m"
+      },
+      {
+        "WallId": 98,
+        "length": "1.053m"
+      },
+      {
+        "WallId": 99,
+        "length": "1.422m"
+      },
+      {
+        "WallId": 96,
+        "length": "0.683m"
+      },
+      {
+        "WallId": 92,
+        "length": "4.17m"
       }
     ],
     "ExposedWall": [
       {
-        "wallId": 3,
+        "wallId": 94,
         "length": "1.256m"
       }
     ],
     "SharedWalls": [
       {
-        "wallId": 75,
+        "wallId": 93,
+        "length": "1.642m",
+        "sharedRoom": [
+          {
+            "roomId": 100,
+            "RoomName": "Poduct Display Area"
+          }
+        ]
+      },
+      {
+        "wallId": 90,
+        "length": "1.365m",
+        "sharedRoom": [
+          {
+            "roomId": 86,
+            "RoomName": "4 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 95,
         "length": "3.533m",
         "sharedRoom": [
           {
-            "roomId": 101,
+            "roomId": 122,
             "RoomName": "Reception"
           }
         ]
       },
       {
-        "wallId": 78,
-        "length": "1.642m",
-        "sharedRoom": [
-          {
-            "roomId": 2,
-            "RoomName": "Poduct Display Area"
-          }
-        ]
-      },
-      {
-        "wallId": 73,
+        "wallId": 97,
         "length": "1.488m",
         "sharedRoom": [
           {
-            "roomId": 105,
+            "roomId": 3,
             "RoomName": "Waiting"
           }
         ]
       },
       {
-        "wallId": 4,
-        "length": "4.17m",
-        "sharedRoom": [
-          {
-            "roomId": 2,
-            "RoomName": "Poduct Display Area"
-          }
-        ]
-      },
-      {
-        "wallId": 82,
-        "length": "1.422m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 72,
-        "length": "0.683m",
-        "sharedRoom": [
-          {
-            "roomId": 105,
-            "RoomName": "Waiting"
-          }
-        ]
-      },
-      {
-        "wallId": 76,
+        "wallId": 98,
         "length": "1.053m",
         "sharedRoom": [
           {
-            "roomId": 107,
+            "roomId": 5,
             "RoomName": "Builder Area (2)"
           }
         ]
       },
       {
-        "wallId": 74,
-        "length": "1.365m",
+        "wallId": 99,
+        "length": "1.422m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
+            "roomId": 108,
+            "RoomName": "Main Coridor"
           }
         ]
+      },
+      {
+        "wallId": 96,
+        "length": "0.683m",
+        "sharedRoom": [
+          {
+            "roomId": 3,
+            "RoomName": "Waiting"
+          }
+        ]
+      },
+      {
+        "wallId": 92,
+        "length": "4.17m",
+        "sharedRoom": [
+          {
+            "roomId": 100,
+            "RoomName": "Poduct Display Area"
+          }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "No": "2",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?933.32 /Sheet",
+        "name": "9139 MG BianCO White Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "9139 MG BianCO White Marble Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Maxx Gloss Marble textures Finish Laminate with size of 8 ft x 4 ft of thickness 0.8 mm. Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYxSFAr5RiyF5l5aO0qGfSg-3OpQVwYoNxUA5lUoZeH5oD_oI0SYr6-tbrdNjnKvGGYPcs5uAojsqEdTZdjIrWAf1nb7n15Ow=w1366-h635"
+      },
+      {
+        "No": "1",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?2194.47 /Sheet",
+        "name": "9139 MG BianCO White Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "2913 Aris Stone PVC Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Gloss Of Marble textures Finish PVC Laminate with size of 8 ft x 4 ft of thickness 1.25 mm. PVC Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbw9cTL4ctddsqQn-zwRHA240n9p2ilmc3GEybwEQpQZ_7yqAZCjl6QwRzwX-CXaQNoi6MjwHwkJI42Q85y0tzNbnar07QN3w=w1366-h635"
       }
     ]
   },
@@ -452,374 +1235,406 @@
     "name": "Poduct Display Area",
     "Walls": [
       {
-        "WallId": 78,
-        "length": "1.642m"
-      },
-      {
-        "WallId": 4,
+        "WallId": 92,
         "length": "4.17m"
       },
       {
-        "WallId": 71,
-        "length": "4.469m"
-      },
-      {
-        "WallId": 84,
+        "WallId": 102,
         "length": "2.734m"
       },
       {
-        "WallId": 83,
+        "WallId": 103,
         "length": "5.8m"
+      },
+      {
+        "WallId": 93,
+        "length": "1.642m"
+      },
+      {
+        "WallId": 101,
+        "length": "4.469m"
       }
     ],
     "ExposedWall": [
       {
-        "wallId": 83,
+        "wallId": 103,
         "length": "5.8m"
       }
     ],
     "SharedWalls": [
       {
-        "wallId": 78,
-        "length": "1.642m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      },
-      {
-        "wallId": 4,
+        "wallId": 92,
         "length": "4.17m",
         "sharedRoom": [
           {
-            "roomId": 1,
+            "roomId": 91,
             "RoomName": "Circulation Area 3"
           }
         ]
       },
       {
-        "wallId": 71,
-        "length": "4.469m",
+        "wallId": 102,
+        "length": "2.734m",
         "sharedRoom": [
           {
-            "roomId": 85,
-            "RoomName": "WorkSpace 1"
+            "roomId": 108,
+            "RoomName": "Main Coridor"
           }
         ]
       },
       {
-        "wallId": 84,
-        "length": "2.734m",
+        "wallId": 93,
+        "length": "1.642m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
+          }
+        ]
+      },
+      {
+        "wallId": 101,
+        "length": "4.469m",
+        "sharedRoom": [
           {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 104,
+            "RoomName": "WorkSpace 1"
           }
         ]
       }
-    ]
+    ],
+    "products": null
   },
   {
     "area": "45.15m²",
     "name": "WorkSpace 1",
     "Walls": [
       {
-        "WallId": 87,
+        "WallId": 105,
         "length": "10.094m"
       },
       {
-        "WallId": 86,
+        "WallId": 107,
         "length": "10.094m"
       },
       {
-        "WallId": 89,
+        "WallId": 106,
         "length": "4.477m"
       },
       {
-        "WallId": 71,
+        "WallId": 101,
         "length": "4.469m"
       }
     ],
     "ExposedWall": [
       {
-        "wallId": 87,
+        "wallId": 105,
         "length": "10.094m"
       }
     ],
     "SharedWalls": [
       {
-        "wallId": 86,
+        "wallId": 107,
         "length": "10.094m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
+            "roomId": 108,
+            "RoomName": "Main Coridor"
           }
         ]
       },
       {
-        "wallId": 89,
+        "wallId": 106,
         "length": "4.477m",
         "sharedRoom": [
           {
-            "roomId": 111,
+            "roomId": 9,
             "RoomName": "Circulation Area 1"
           }
         ]
       },
       {
-        "wallId": 71,
+        "wallId": 101,
         "length": "4.469m",
         "sharedRoom": [
           {
-            "roomId": 2,
+            "roomId": 100,
             "RoomName": "Poduct Display Area"
           }
         ]
       }
-    ]
+    ],
+    "products": null
   },
   {
     "area": "33.232m²",
-    "name": "Circulation Area 4",
+    "name": "Main Coridor",
     "Walls": [
       {
-        "WallId": 90,
-        "length": "3.559m"
-      },
-      {
-        "WallId": 82,
-        "length": "1.422m"
-      },
-      {
-        "WallId": 91,
-        "length": "10.276m"
-      },
-      {
-        "WallId": 93,
-        "length": "1.943m"
-      },
-      {
-        "WallId": 95,
+        "WallId": 111,
         "length": "0.738m"
       },
       {
-        "WallId": 97,
+        "WallId": 114,
+        "length": "10.276m"
+      },
+      {
+        "WallId": 113,
         "length": "0.787m"
       },
       {
-        "WallId": 92,
-        "length": "0.804m"
+        "WallId": 120,
+        "length": "17.85m"
       },
       {
-        "WallId": 100,
-        "length": "9.899m"
-      },
-      {
-        "WallId": 98,
-        "length": "2.692m"
-      },
-      {
-        "WallId": 86,
-        "length": "10.094m"
-      },
-      {
-        "WallId": 84,
-        "length": "2.734m"
-      },
-      {
-        "WallId": 96,
+        "WallId": 116,
         "length": "0.783m"
       },
       {
-        "WallId": 99,
-        "length": "10.886m"
+        "WallId": 119,
+        "length": "0.804m"
       },
       {
-        "WallId": 94,
-        "length": "22.41m"
+        "WallId": 112,
+        "length": "2.692m"
+      },
+      {
+        "WallId": 117,
+        "length": "6.281m"
+      },
+      {
+        "WallId": 115,
+        "length": "1.943m"
+      },
+      {
+        "WallId": 121,
+        "length": "4.605m"
+      },
+      {
+        "WallId": 118,
+        "length": "4.56m"
+      },
+      {
+        "WallId": 110,
+        "length": "3.559m"
+      },
+      {
+        "WallId": 109,
+        "length": "9.899m"
+      },
+      {
+        "WallId": 99,
+        "length": "1.422m"
+      },
+      {
+        "WallId": 107,
+        "length": "10.094m"
+      },
+      {
+        "WallId": 102,
+        "length": "2.734m"
       }
     ],
     "ExposedWall": [
       {
-        "wallId": 99,
-        "length": "10.886m"
+        "wallId": 120,
+        "length": "17.85m"
       },
       {
-        "wallId": 94,
-        "length": "22.41m"
+        "wallId": 116,
+        "length": "0.783m"
+      },
+      {
+        "wallId": 119,
+        "length": "0.804m"
       }
     ],
     "SharedWalls": [
       {
-        "wallId": 90,
-        "length": "3.559m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          }
-        ]
-      },
-      {
-        "wallId": 82,
-        "length": "1.422m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      },
-      {
-        "wallId": 91,
-        "length": "10.276m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 93,
-        "length": "1.943m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 95,
+        "wallId": 111,
         "length": "0.738m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 111,
+            "roomId": 9,
             "RoomName": "Circulation Area 1"
           }
         ]
       },
       {
-        "wallId": 97,
+        "wallId": 114,
+        "length": "10.276m",
+        "sharedRoom": [
+          {
+            "roomId": 42,
+            "RoomName": "President Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 113,
         "length": "0.787m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 133,
+            "roomId": 31,
             "RoomName": "Circulation Area 2"
           }
         ]
       },
       {
-        "wallId": 92,
-        "length": "0.804m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 100,
-        "length": "9.899m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 136,
-            "RoomName": "WorkSpace 2"
-          }
-        ]
-      },
-      {
-        "wallId": 98,
+        "wallId": 112,
         "length": "2.692m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 107,
+            "roomId": 5,
             "RoomName": "Builder Area (2)"
           }
         ]
       },
       {
-        "wallId": 86,
+        "wallId": 117,
+        "length": "6.281m",
+        "sharedRoom": [
+          {
+            "roomId": 47,
+            "RoomName": "Training Room 2"
+          }
+        ]
+      },
+      {
+        "wallId": 115,
+        "length": "1.943m",
+        "sharedRoom": [
+          {
+            "roomId": 42,
+            "RoomName": "President Cabin"
+          }
+        ]
+      },
+      {
+        "wallId": 121,
+        "length": "4.605m",
+        "sharedRoom": [
+          {
+            "roomId": 86,
+            "RoomName": "4 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 118,
+        "length": "4.56m",
+        "sharedRoom": [
+          {
+            "roomId": 86,
+            "RoomName": "4 Pax Meeting (2)"
+          }
+        ]
+      },
+      {
+        "wallId": 110,
+        "length": "3.559m",
+        "sharedRoom": [
+          {
+            "roomId": 29,
+            "RoomName": "Fire Safe Strong Room"
+          }
+        ]
+      },
+      {
+        "wallId": 109,
+        "length": "9.899m",
+        "sharedRoom": [
+          {
+            "roomId": 34,
+            "RoomName": "WorkSpace 2"
+          }
+        ]
+      },
+      {
+        "wallId": 99,
+        "length": "1.422m",
+        "sharedRoom": [
+          {
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
+          }
+        ]
+      },
+      {
+        "wallId": 107,
         "length": "10.094m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 85,
+            "roomId": 104,
             "RoomName": "WorkSpace 1"
           }
         ]
       },
       {
-        "wallId": 84,
+        "wallId": 102,
         "length": "2.734m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 2,
+            "roomId": 100,
             "RoomName": "Poduct Display Area"
           }
         ]
+      }
+    ],
+    "products": [
+      {
+        "No": "33",
+        "filepath": "",
+        "price": "?95.38 /Sq. Ft",
+        "packOf1Sheet": "?933.32\ufffd/Sheet",
+        "name": "CW3022 21 inches x 10 m White Colour Classic Wallpaper - 57 Sq. Ft.",
+        "description": "CW3022 21 inches x 10 m White Colour Classic Wallpaper - 57 Sq. Ft.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYTt3Rte76hVDjkdTM6qMyjPc8xfNJPfvpu9GSiJyAZqFpsgS3RD2W8wknpEfQGFLwfOk-0ULgg7Hm3aXag3adytYwHeGYB7A=w1366-h635"
       },
       {
-        "wallId": 96,
-        "length": "0.783m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          }
-        ]
+        "No": "28",
+        "filepath": "models/js/onFloorItems/2301.js",
+        "price": "?95.31 /Sq. Ft.",
+        "packOf1Sheet": "?3648\ufffd/Sheet",
+        "name": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm",
+        "description": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm is \npart of the elegant collection of Carpet Tiles products\nfrom Solutia.The product is a premium one with \nunmatched quality and aesthetics. Best Carpet \nTiles products for usage in Office,Hotel among others.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYn7NDlTpQ8WP2B3jzWp-2m8up0q4UeEkxCxDXuyrLKxmI6GKYOtP10T_3K0qbBzSzvnAPpR9pu65zJDYTMZSHdti81ETRAXg=w1366-h635"
+      },
+      {
+        "No": "25",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?933.32\ufffd/Sheet",
+        "name": "9138 MG Marine Black Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "9138 MG Marine Black Marble Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Maxx Gloss Marble textures Finish Laminate with size of 8 ft x 4 ft of thickness 0.8 mm. Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYeBwgkGJd6rgRbwGW9PEvq2yyIQZmqzeJQu9qsEzH-lswbHkyzFbvMGYiQ2cuWf6k8KFs3pPnBxEJwzVvLqRKhXAcbSZnyhh8=w1366-h635"
+      },
+      {
+        "No": "28",
+        "filepath": "models/js/onFloorItems/2301.js",
+        "price": "?95.31 /Sq. Ft.",
+        "packOf1Sheet": "?3648\ufffd/Sheet",
+        "name": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm",
+        "description": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm is \npart of the elegant collection of Carpet Tiles products\nfrom Solutia.The product is a premium one with \nunmatched quality and aesthetics. Best Carpet \nTiles products for usage in Office,Hotel among others.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYn7NDlTpQ8WP2B3jzWp-2m8up0q4UeEkxCxDXuyrLKxmI6GKYOtP10T_3K0qbBzSzvnAPpR9pu65zJDYTMZSHdti81ETRAXg=w1366-h635"
+      },
+      {
+        "No": "28",
+        "filepath": "models/js/onFloorItems/2301.js",
+        "price": "?95.31 /Sq. Ft.",
+        "packOf1Sheet": "?3648\ufffd/Sheet",
+        "name": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm",
+        "description": "2301 Canberra 500 x 500 mm Carpet Tile - 6 mm is \npart of the elegant collection of Carpet Tiles products\nfrom Solutia.The product is a premium one with \nunmatched quality and aesthetics. Best Carpet \nTiles products for usage in Office,Hotel among others.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYn7NDlTpQ8WP2B3jzWp-2m8up0q4UeEkxCxDXuyrLKxmI6GKYOtP10T_3K0qbBzSzvnAPpR9pu65zJDYTMZSHdti81ETRAXg=w1366-h635"
+      },
+      {
+        "No": "24",
+        "filepath": "",
+        "price": "?114\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?3648\ufffd/Sheet",
+        "name": "PT 224 PR Ultra Marble Craft 8 ft x 4 ft Marble Finish Acrylic Laminate - 1.5 mm",
+        "description": "PENTONE is 100% acrylic laminate which comes in a variety of striking designs and colour PENTONE high gloss acrylic laminates sheet comes with protected 6H Anti Scratch high quality layer. PENTONE brings to you never before scintillating designs in array of new colours to add a dash of class to the interiors of your home and. Our acrylic collection that reflects simplicity, with an updated touch from the new contemporary formats",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihaZLzdsopyI3MNH-Zv7cUKwl76DxcrxqzsBclRjUl03INI4e_u5pGHQAtO86pDS8jJxxf8ufTRvEPnp2F2mNvcBX-HdEUrIHzM=w1366-h635"
       }
     ]
   },
@@ -828,1044 +1643,83 @@
     "name": "Reception",
     "Walls": [
       {
-        "WallId": 103,
+        "WallId": 1,
         "length": "1.94m"
       },
       {
-        "WallId": 81,
-        "length": "2.392m"
-      },
-      {
-        "WallId": 104,
-        "length": "3.639m"
-      },
-      {
-        "WallId": 102,
+        "WallId": 2,
         "length": "3.12m"
       },
       {
-        "WallId": 75,
+        "WallId": 89,
+        "length": "2.392m"
+      },
+      {
+        "WallId": 0,
+        "length": "3.639m"
+      },
+      {
+        "WallId": 95,
         "length": "3.533m"
       }
     ],
     "ExposedWall": [
       {
-        "wallId": 104,
+        "wallId": 0,
         "length": "3.639m"
       }
     ],
     "SharedWalls": [
       {
-        "wallId": 103,
+        "wallId": 1,
         "length": "1.94m",
         "sharedRoom": [
           {
-            "roomId": 107,
+            "roomId": 5,
             "RoomName": "Builder Area (2)"
           }
         ]
       },
       {
-        "wallId": 81,
-        "length": "2.392m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 102,
+        "wallId": 2,
         "length": "3.12m",
         "sharedRoom": [
           {
-            "roomId": 105,
+            "roomId": 3,
             "RoomName": "Waiting"
-          }
-        ]
-      },
-      {
-        "wallId": 75,
-        "length": "3.533m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "3.507m²",
-    "name": "Waiting",
-    "Walls": [
-      {
-        "WallId": 73,
-        "length": "1.488m"
-      },
-      {
-        "WallId": 102,
-        "length": "3.12m"
-      },
-      {
-        "WallId": 106,
-        "length": "3.491m"
-      },
-      {
-        "WallId": 72,
-        "length": "0.683m"
-      }
-    ],
-    "ExposedWall": [],
-    "SharedWalls": [
-      {
-        "wallId": 73,
-        "length": "1.488m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      },
-      {
-        "wallId": 102,
-        "length": "3.12m",
-        "sharedRoom": [
-          {
-            "roomId": 101,
-            "RoomName": "Reception"
-          }
-        ]
-      },
-      {
-        "wallId": 106,
-        "length": "3.491m",
-        "sharedRoom": [
-          {
-            "roomId": 107,
-            "RoomName": "Builder Area (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 72,
-        "length": "0.683m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "39.453m²",
-    "name": "Builder Area (2)",
-    "Walls": [
-      {
-        "WallId": 110,
-        "length": "4.291m"
-      },
-      {
-        "WallId": 108,
-        "length": "4.301m"
-      },
-      {
-        "WallId": 109,
-        "length": "9.176m"
-      },
-      {
-        "WallId": 76,
-        "length": "1.053m"
-      },
-      {
-        "WallId": 106,
-        "length": "3.491m"
-      },
-      {
-        "WallId": 98,
-        "length": "2.692m"
-      },
-      {
-        "WallId": 103,
-        "length": "1.94m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 108,
-        "length": "4.301m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 110,
-        "length": "4.291m",
-        "sharedRoom": [
-          {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 109,
-        "length": "9.176m",
-        "sharedRoom": [
-          {
-            "roomId": 139,
-            "RoomName": "Builder Area (1)"
-          }
-        ]
-      },
-      {
-        "wallId": 76,
-        "length": "1.053m",
-        "sharedRoom": [
-          {
-            "roomId": 1,
-            "RoomName": "Circulation Area 3"
-          }
-        ]
-      },
-      {
-        "wallId": 106,
-        "length": "3.491m",
-        "sharedRoom": [
-          {
-            "roomId": 105,
-            "RoomName": "Waiting"
-          }
-        ]
-      },
-      {
-        "wallId": 98,
-        "length": "2.692m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 103,
-        "length": "1.94m",
-        "sharedRoom": [
-          {
-            "roomId": 101,
-            "RoomName": "Reception"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "3.384m²",
-    "name": "Circulation Area 1",
-    "Walls": [
-      {
-        "WallId": 115,
-        "length": "1.951m"
-      },
-      {
-        "WallId": 113,
-        "length": "0.755m"
-      },
-      {
-        "WallId": 95,
-        "length": "0.738m"
-      },
-      {
-        "WallId": 114,
-        "length": "1.393m"
-      },
-      {
-        "WallId": 89,
-        "length": "4.477m"
-      },
-      {
-        "WallId": 112,
-        "length": "1.169m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 113,
-        "length": "0.755m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 115,
-        "length": "1.951m",
-        "sharedRoom": [
-          {
-            "roomId": 116,
-            "RoomName": "Sr Manager Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 95,
-        "length": "0.738m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 114,
-        "length": "1.393m",
-        "sharedRoom": [
-          {
-            "roomId": 129,
-            "RoomName": "4 Pax Meeting (1)"
           }
         ]
       },
       {
         "wallId": 89,
-        "length": "4.477m",
+        "length": "2.392m",
         "sharedRoom": [
           {
-            "roomId": 85,
-            "RoomName": "WorkSpace 1"
-          }
-        ]
-      },
-      {
-        "wallId": 112,
-        "length": "1.169m",
-        "sharedRoom": [
-          {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "3.851m²",
-    "name": "Sr Manager Cabin",
-    "Walls": [
-      {
-        "WallId": 119,
-        "length": "0.261m"
-      },
-      {
-        "WallId": 120,
-        "length": "1.69m"
-      },
-      {
-        "WallId": 117,
-        "length": "1.974m"
-      },
-      {
-        "WallId": 118,
-        "length": "1.974m"
-      },
-      {
-        "WallId": 115,
-        "length": "1.951m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 118,
-        "length": "1.974m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 119,
-        "length": "0.261m",
-        "sharedRoom": [
-          {
-            "roomId": 125,
-            "RoomName": "6 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 120,
-        "length": "1.69m",
-        "sharedRoom": [
-          {
-            "roomId": 121,
-            "RoomName": "6 Pax Meeting (1)"
-          }
-        ]
-      },
-      {
-        "wallId": 117,
-        "length": "1.974m",
-        "sharedRoom": [
-          {
-            "roomId": 129,
-            "RoomName": "4 Pax Meeting (1)"
-          }
-        ]
-      },
-      {
-        "wallId": 115,
-        "length": "1.951m",
-        "sharedRoom": [
-          {
-            "roomId": 111,
-            "RoomName": "Circulation Area 1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "2.648m²",
-    "name": "6 Pax Meeting (1)",
-    "Walls": [
-      {
-        "WallId": 124,
-        "length": "1.567m"
-      },
-      {
-        "WallId": 122,
-        "length": "1.567m"
-      },
-      {
-        "WallId": 123,
-        "length": "1.69m"
-      },
-      {
-        "WallId": 120,
-        "length": "1.69m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 124,
-        "length": "1.567m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 122,
-        "length": "1.567m",
-        "sharedRoom": [
-          {
-            "roomId": 125,
-            "RoomName": "6 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 123,
-        "length": "1.69m",
-        "sharedRoom": [
-          {
-            "roomId": 133,
-            "RoomName": "Circulation Area 2"
-          }
-        ]
-      },
-      {
-        "wallId": 120,
-        "length": "1.69m",
-        "sharedRoom": [
-          {
-            "roomId": 116,
-            "RoomName": "Sr Manager Cabin"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "2.592m²",
-    "name": "6 Pax Meeting (2)",
-    "Walls": [
-      {
-        "WallId": 128,
-        "length": "1.654m"
-      },
-      {
-        "WallId": 127,
-        "length": "1.393m"
-      },
-      {
-        "WallId": 119,
-        "length": "0.261m"
-      },
-      {
-        "WallId": 126,
-        "length": "1.567m"
-      },
-      {
-        "WallId": 122,
-        "length": "1.567m"
-      }
-    ],
-    "ExposedWall": [],
-    "SharedWalls": [
-      {
-        "wallId": 128,
-        "length": "1.654m",
-        "sharedRoom": [
-          {
-            "roomId": 133,
-            "RoomName": "Circulation Area 2"
-          }
-        ]
-      },
-      {
-        "wallId": 127,
-        "length": "1.393m",
-        "sharedRoom": [
-          {
-            "roomId": 129,
-            "RoomName": "4 Pax Meeting (1)"
-          }
-        ]
-      },
-      {
-        "wallId": 119,
-        "length": "0.261m",
-        "sharedRoom": [
-          {
-            "roomId": 116,
-            "RoomName": "Sr Manager Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 126,
-        "length": "1.567m",
-        "sharedRoom": [
-          {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          }
-        ]
-      },
-      {
-        "wallId": 122,
-        "length": "1.567m",
-        "sharedRoom": [
-          {
-            "roomId": 121,
-            "RoomName": "6 Pax Meeting (1)"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "2.75m²",
-    "name": "4 Pax Meeting (1)",
-    "Walls": [
-      {
-        "WallId": 117,
-        "length": "1.974m"
-      },
-      {
-        "WallId": 130,
-        "length": "1.974m"
-      },
-      {
-        "WallId": 114,
-        "length": "1.393m"
-      },
-      {
-        "WallId": 127,
-        "length": "1.393m"
-      }
-    ],
-    "ExposedWall": [],
-    "SharedWalls": [
-      {
-        "wallId": 117,
-        "length": "1.974m",
-        "sharedRoom": [
-          {
-            "roomId": 116,
-            "RoomName": "Sr Manager Cabin"
-          }
-        ]
-      },
-      {
-        "wallId": 130,
-        "length": "1.974m",
-        "sharedRoom": [
-          {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          }
-        ]
-      },
-      {
-        "wallId": 114,
-        "length": "1.393m",
-        "sharedRoom": [
-          {
-            "roomId": 111,
-            "RoomName": "Circulation Area 1"
-          }
-        ]
-      },
-      {
-        "wallId": 127,
-        "length": "1.393m",
-        "sharedRoom": [
-          {
-            "roomId": 125,
-            "RoomName": "6 Pax Meeting (2)"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "4.15m²",
-    "name": "Fire Safe Strong Room",
-    "Walls": [
-      {
-        "WallId": 130,
-        "length": "1.974m"
-      },
-      {
-        "WallId": 90,
-        "length": "3.559m"
-      },
-      {
-        "WallId": 132,
-        "length": "1.169m"
-      },
-      {
-        "WallId": 126,
-        "length": "1.567m"
-      },
-      {
-        "WallId": 112,
-        "length": "1.169m"
-      }
-    ],
-    "ExposedWall": [],
-    "SharedWalls": [
-      {
-        "wallId": 130,
-        "length": "1.974m",
-        "sharedRoom": [
-          {
-            "roomId": 129,
-            "RoomName": "4 Pax Meeting (1)"
-          }
-        ]
-      },
-      {
-        "wallId": 90,
-        "length": "3.559m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 132,
-        "length": "1.169m",
-        "sharedRoom": [
-          {
-            "roomId": 133,
-            "RoomName": "Circulation Area 2"
-          }
-        ]
-      },
-      {
-        "wallId": 126,
-        "length": "1.567m",
-        "sharedRoom": [
-          {
-            "roomId": 125,
-            "RoomName": "6 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 112,
-        "length": "1.169m",
-        "sharedRoom": [
-          {
-            "roomId": 111,
-            "RoomName": "Circulation Area 1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "3.513m²",
-    "name": "Circulation Area 2",
-    "Walls": [
-      {
-        "WallId": 135,
-        "length": "0.784m"
-      },
-      {
-        "WallId": 97,
-        "length": "0.787m"
-      },
-      {
-        "WallId": 132,
-        "length": "1.169m"
-      },
-      {
-        "WallId": 128,
-        "length": "1.654m"
-      },
-      {
-        "WallId": 134,
-        "length": "4.448m"
-      },
-      {
-        "WallId": 123,
-        "length": "1.69m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 135,
-        "length": "0.784m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 97,
-        "length": "0.787m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 132,
-        "length": "1.169m",
-        "sharedRoom": [
-          {
-            "roomId": 131,
-            "RoomName": "Fire Safe Strong Room"
-          }
-        ]
-      },
-      {
-        "wallId": 128,
-        "length": "1.654m",
-        "sharedRoom": [
-          {
-            "roomId": 125,
-            "RoomName": "6 Pax Meeting (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 134,
-        "length": "4.448m",
-        "sharedRoom": [
-          {
-            "roomId": 136,
-            "RoomName": "WorkSpace 2"
-          }
-        ]
-      },
-      {
-        "wallId": 123,
-        "length": "1.69m",
-        "sharedRoom": [
-          {
-            "roomId": 121,
-            "RoomName": "6 Pax Meeting (1)"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "44.031m²",
-    "name": "WorkSpace 2",
-    "Walls": [
-      {
-        "WallId": 134,
-        "length": "4.448m"
-      },
-      {
-        "WallId": 140,
-        "length": "9.899m"
-      },
-      {
-        "WallId": 137,
-        "length": "4.099m"
-      },
-      {
-        "WallId": 138,
-        "length": "0.349m"
-      },
-      {
-        "WallId": 100,
-        "length": "9.899m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 140,
-        "length": "9.899m"
-      },
-      {
-        "wallId": 137,
-        "length": "4.099m"
-      },
-      {
-        "wallId": 138,
-        "length": "0.349m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 134,
-        "length": "4.448m",
-        "sharedRoom": [
-          {
-            "roomId": 133,
-            "RoomName": "Circulation Area 2"
-          }
-        ]
-      },
-      {
-        "wallId": 100,
-        "length": "9.899m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "54.294m²",
-    "name": "Builder Area (1)",
-    "Walls": [
-      {
-        "WallId": 144,
-        "length": "9.176m"
-      },
-      {
-        "WallId": 109,
-        "length": "9.176m"
-      },
-      {
-        "WallId": 142,
-        "length": "5.946m"
-      },
-      {
-        "WallId": 141,
-        "length": "5.888m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 144,
-        "length": "9.176m"
-      },
-      {
-        "wallId": 141,
-        "length": "5.888m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 109,
-        "length": "9.176m",
-        "sharedRoom": [
-          {
-            "roomId": 107,
-            "RoomName": "Builder Area (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 142,
-        "length": "5.946m",
-        "sharedRoom": [
-          {
-            "roomId": 143,
-            "RoomName": "President Cabin"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "19.928m²",
-    "name": "President Cabin",
-    "Walls": [
-      {
-        "WallId": 110,
-        "length": "4.291m"
-      },
-      {
-        "WallId": 91,
-        "length": "10.276m"
-      },
-      {
-        "WallId": 93,
-        "length": "1.943m"
-      },
-      {
-        "WallId": 145,
-        "length": "1.943m"
-      },
-      {
-        "WallId": 142,
-        "length": "5.946m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 145,
-        "length": "1.943m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 110,
-        "length": "4.291m",
-        "sharedRoom": [
-          {
-            "roomId": 107,
-            "RoomName": "Builder Area (2)"
-          }
-        ]
-      },
-      {
-        "wallId": 91,
-        "length": "10.276m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 93,
-        "length": "1.943m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
-          },
-          {
-            "roomId": 88,
-            "RoomName": "Circulation Area 4"
-          }
-        ]
-      },
-      {
-        "wallId": 142,
-        "length": "5.946m",
-        "sharedRoom": [
-          {
-            "roomId": 139,
-            "RoomName": "Builder Area (1)"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "area": "12.713m²",
-    "name": "18 Pax Meeting Room",
-    "Walls": [
-      {
-        "WallId": 151,
-        "length": "2.28m"
-      },
-      {
-        "WallId": 147,
-        "length": "2.28m"
-      },
-      {
-        "WallId": 152,
-        "length": "5.575m"
-      },
-      {
-        "WallId": 148,
-        "length": "5.575m"
-      }
-    ],
-    "ExposedWall": [
-      {
-        "wallId": 151,
-        "length": "2.28m"
-      },
-      {
-        "wallId": 152,
-        "length": "5.575m"
-      }
-    ],
-    "SharedWalls": [
-      {
-        "wallId": 147,
-        "length": "2.28m",
-        "sharedRoom": [
-          {
-            "roomId": 0,
+            "roomId": 86,
             "RoomName": "4 Pax Meeting (2)"
           }
         ]
       },
       {
-        "wallId": 148,
-        "length": "5.575m",
+        "wallId": 95,
+        "length": "3.533m",
         "sharedRoom": [
           {
-            "roomId": 0,
-            "RoomName": "4 Pax Meeting (2)"
+            "roomId": 91,
+            "RoomName": "Circulation Area 3"
           }
         ]
+      }
+    ],
+    "products": [
+      {
+        "No": "1",
+        "filepath": "",
+        "price": "?29.17\ufffd/Sq. Ft.",
+        "packOf1Sheet": "?2194.47 /Sheet",
+        "name": "9139 MG BianCO White Marble 8 ft x 4 ft Maxx Gloss Marble Finish Laminate - 0.8 mm",
+        "description": "2913 Aris Stone PVC Laminate from Advance Laminates speaks for style and elegance. The finest quality coupled with unmatched Gloss Of Marble textures Finish PVC Laminate with size of 8 ft x 4 ft of thickness 1.25 mm. PVC Laminate best used in Living Room,Bedroom,Dining Room,Doors,Office,Restaurant,Hotel for Indoor project.",
+        "itemImage": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbw9cTL4ctddsqQn-zwRHA240n9p2ilmc3GEybwEQpQZ_7yqAZCjl6QwRzwX-CXaQNoi6MjwHwkJI42Q85y0tzNbnar07QN3w=w1366-h635"
       }
     ]
   }
