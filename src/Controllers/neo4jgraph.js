@@ -139,8 +139,8 @@ RETURN p`;
       const query = `
             MATCH (n:${label})
             WHERE ${Object.keys(properties)
-              .map((key) => `n.\`${key}\` = "${properties[key]}"`)
-              .join(" AND ")}
+          .map((key) => `n.\`${key}\` = "${properties[key]}"`)
+          .join(" AND ")}
             RETURN n
         `;
       const mainResult = await this.query(query, properties);
@@ -214,7 +214,7 @@ RETURN p`;
       await session.close();
     }
   }
-  async getProductbyRoomId() {}
+  async getProductbyRoomId() { }
   async connectRoomToOther(cornorNode, roomId, relationship) {
     try {
       var relation = null;
@@ -230,6 +230,35 @@ RETURN p`;
       //console.log(err);
     }
   }
+  async queryAHU() {
+    try {
+      const query = `MATCH (u:usagetype {usagetype:"AHU"})<-[:has_type]-(r:room)
+      RETURN r`;
+      const result = await this.query(query);
+      console.log(result);
+      if (result.records.length === 0) {
+        return null; // No room found
+      }
+      const ahulist = []
+      result.records.forEach(record =>
+        ahulist.push(record.get('r').properties.name)
+      )
+      //console.log(data);
+      return ahulist;
+    } catch (err) {
+      return err;
+    }
+  }
+  async deleteGraph() {
+    try {
+      const query = "MATCH (n) DETACH DELETE n"
+      const result = await this.query(query);
+      return result;
+    } catch (err) {
+      return err
+    }
+  }
+
   async createWall(label, properties) {
     try {
       const checkQuery = `
@@ -296,7 +325,7 @@ RETURN p`;
 
       return relation?.records[0]?.get(0).identity?.low;
     } catch (err) {
-      //console.log(err);
+      console.log(err);
     }
   }
   async queryExposedWall(id) {

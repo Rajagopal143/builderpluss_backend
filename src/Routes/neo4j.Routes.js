@@ -210,7 +210,7 @@ async function createMultipleOpenings(values, mainNodeId, label, connection) {
 }
 
 router.post("/api/architect", async function (req, res) {
-  if (Object.keys(req.body).length ==0 ) {
+  if (Object.keys(req.body).length == 0) {
     return res.status(400).json({ error: "data Not found" });
   }
   const data = req.body;
@@ -218,7 +218,7 @@ router.post("/api/architect", async function (req, res) {
   const walls = data.floorplan.walls;
   const cornors = data.floorplan.corners;
   try {
-
+    const deleteGraph = await dbGraph.deleteGraph();
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
         const roomNode = await dbGraph.createRoom("room", rooms[room]);
@@ -254,8 +254,8 @@ router.post("/api/architect", async function (req, res) {
     res.json({ message: "success" });
   } catch (e) {
     //console.log(e);
-    res.status(400).json({error:e})
-  } 
+    res.status(400).json({ error: e });
+  }
 });
 
 router.post("/api/graph", async function (req, res) {
@@ -281,21 +281,21 @@ router.post("/api/graph", async function (req, res) {
       }
     });
   } catch (e) {
-    return //console.log(e);
+    return; //console.log(e);
   } finally {
     res.json({
       message: "success",
     });
   }
 });
-router.get('/allNodes', async (req, res) => {
+router.get("/allNodes", async (req, res) => {
   try {
     const data = await dbGraph.allProducts();
     res.status(300).json(data);
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
-})
+});
 
 router.post("/api/twodGraph", async function (req, res) {
   const rooms = req.body;
@@ -347,7 +347,7 @@ router.get("/api/getgraph", async function (req, res) {
     roomData["Walls"] = await dbGraph.getWallByRoomId(room.id);
     roomData["ExposedWall"] = await dbGraph.queryExposedWall(room.id);
     roomData["SharedWalls"] = await dbGraph.querySharedWall(room.id);
-    roomData["products"] = await dbGraph.getConnectedProducts(room.id)
+    roomData["products"] = await dbGraph.getConnectedProducts(room.id);
     data.push(roomData);
   }
   // const walldata=[]
@@ -411,24 +411,37 @@ router.post("/api/product", async function (req, res) {
 
 router.post("/api/productoroom", async function (req, res) {
   const { roomName, products } = req.body;
-  console.log(products)
+  console.log(products);
   try {
-  const roomNode = await dbGraph.getRoomByName(roomName);
+    const roomNode = await dbGraph.getRoomByName(roomName);
     if (roomNode) {
-      products.forEach(async(product) => {
+      products.forEach(async (product) => {
         const newProduct = await dbGraph.createRoom("product", product);
-        const relation = await dbGraph.connectRoomToOther(newProduct, roomNode, "has_product");
-      })
+        const relation = await dbGraph.connectRoomToOther(
+          newProduct,
+          roomNode,
+          "has_product"
+        );
+      });
     }
-      
+
     res.status(200).json({ message: "Product Added Succsusfully" });
   } catch (err) {
     res.status(400).json({ err: err });
   }
-})
+});
 
 router.post("/api/addwallprops", async function (req, res) {
-  const { direction, doortype, windowtype, windowwidth, windowheight, doorwidth, doorheight, wallId } = req.body;
+  const {
+    direction,
+    doortype,
+    windowtype,
+    windowwidth,
+    windowheight,
+    doorwidth,
+    doorheight,
+    wallId,
+  } = req.body;
   console.log(
     direction,
     doortype,
@@ -441,16 +454,85 @@ router.post("/api/addwallprops", async function (req, res) {
   );
   try {
     const wallNode = await dbGraph.queryNodeById(wallId);
-    if(wallNode) return new Error("wall Node Note found")
-    const directionNode = await dbGraph.createNode("direction", { direction });
-    const doortypeNode = await dbGraph.createNode("doortype", { doortype });
-    const windowtypeNode = await dbGraph.createNode("windowtype", {
-      windowtype,
-    });
-    const directionNode = await dbGraph.createNode("direction", { direction });
+    if (!wallNode) return new Error("wall Node Not found");
+    if (doortype) {
+      const doortypeNode = await dbGraph.createNode("doortype", { doortype });
+      const doorNode = await dbGraph.createNode("door", {
+        doorwidth,
+        doorheight,
+      });
+      const doorRelation = await dbGraph.createMultipleRelation(
+        doorNode,
+        wallId,
+        "door"
+      );
+      const doortypeRelation = await dbGraph.createMultipleRelation(
+        doortypeNode,
+        doorNode,
+        "type"
+      );
+    }
+    if (windowtype) {
+      const windowtypeNode = await dbGraph.createNode("windowtype", {
+        windowtype,
+      });
+      const windowNode = await dbGraph.createNode("window", {
+        windowwidth,
+        windowheight,
+      });
 
-    res.status(200).json({message:"Properties Added"})
+      const windowRelation = await dbGraph.createMultipleRelation(
+        windowNode,
+        wallId,
+        "window"
+      );
+      const windowtypeRelation = await dbGraph.createMultipleRelation(
+        windowtypeNode,
+        windowNode,
+        "type"
+      );
+    }
+    const directionNode = await dbGraph.createNode("direction", { direction });
+    const directionRelation = await dbGraph.createMultipleRelation(
+      directionNode,
+      wallId,
+      "direction"
+    );
+    res.status(200).json({ message: "Properties Added" });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+router.post("/api/addroomprop", async (req, res) => {
+  const { roomname,spaceCode, usagetype, ahuZone } = req.body;
+  try {
+    const checkRoom = await dbGraph.createRoom("room", { name: roomname });
+    console.log(checkRoom);
+    if(!checkRoom) return res.status(400).json({ message:"Room not found" });
+      const spacecodeNode = await dbGraph.createNode("spacecode", {
+        spaceCode,
+      });
+    const usagetypeNode = await dbGraph.createNode("usagetype", {
+        usagetype
+    })
+    const spacecodeRelation = await dbGraph.createMultipleRelation(spacecodeNode,checkRoom,"code")
+    const usagetypeRelation = await dbGraph.createMultipleRelation(usagetypeNode, checkRoom, "type")
+    if (ahuZone) {
+      const ahuRoom = await dbGraph.createRoom("room", { name: ahuZone });
+      const ahuRelation = await dbGraph.createMultipleRelation(ahuRoom, checkRoom, "ahuzone");
+    }
+    
+    res.status(200).json({ message: "Room properties added" });
   } catch (err) {
     res.status(400).json({message:err.message})
   }
-});
+})
+router.get("/api/listahu", async (req, res) => {
+  try {
+    const ahulist = await dbGraph.queryAHU();
+    res.status(200).json({ data:ahulist });
+  } catch (err) {
+    res.status(400).json({message:err.message})
+  }
+})
