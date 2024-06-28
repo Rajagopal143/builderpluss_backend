@@ -49,6 +49,44 @@ class Neo4jgraph {
       throw error;
     }
   }
+  async queryWithPropValueOne(label,prop,value) {
+    try {
+      const result = await this.queryWithParams(
+        `MATCH (n:${label} {${prop}: "${value}"}) RETURN n`
+      );
+
+      if (result.records.length === 0) {
+        return null; // No room found
+      }
+
+      // Assuming there is only one room with the given name
+      const room = result?.records[0].get("n").identity?.low;
+      return room;
+    } catch (error) {
+      console.error("Error querying room by name:", error);
+      throw error;
+    }
+  }
+  async queryWithPropValueMultipel(label,prop,value) {
+    try {
+      const result = await this.queryWithParams(
+        `MATCH (n:${label} {${prop}: "${value}"}) RETURN n`
+      );
+
+      if (result.records.length === 0) {
+        return null; // No room found
+      }
+      const data=  await result.records.forEach((record) => {
+          data.push(record.get("n").properties);
+        });
+
+      // Assuming there is only one room with the given name
+      return data;
+    } catch (error) {
+      console.error("Error querying room by name:", error);
+      throw error;
+    }
+  }
   async allProducts() {
     const data = [];
     try {
@@ -174,7 +212,7 @@ RETURN p`;
     try {
       // Check if main node with roomtype exists
       const query = `
-            MATCH (n:${label} { name:"${properties.name}"})
+            MATCH (n:${label} { name:"${properties.spaceCode}"})
             RETURN n
         `;
       const mainResult = await this.query(query, properties);
@@ -258,7 +296,16 @@ RETURN p`;
       return err
     }
   }
-
+  async queryByRoomName(roomname) {
+   try {
+     const query = `MATCH (n:room {name:"${roomname}"}) RETURN n`;
+     const result = await this.query(query);
+     console.log(result.records[0].get("n").identity.low);
+      return result.records[0].get('n').identity.low;
+   } catch (err) {
+     return err;
+   }
+ }
   async createWall(label, properties) {
     try {
       const checkQuery = `

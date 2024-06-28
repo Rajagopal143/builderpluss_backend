@@ -8,12 +8,14 @@ const ProductRouter = require("./src/Routes/Products.Route.js");
 const { BoardRouter } = require("./src/Routes/board.Route.js");
 const { bpfileRouter } = require("./src/Routes/blueprintfile.route.js");
 const router = require("./src/Routes/neo4j.Routes");
+const bodyParser = require("body-parser");
 const app = express();
 const PORT = 4000;
 
 require("dotenv").config();
 
-
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 
 app.use(express.json());

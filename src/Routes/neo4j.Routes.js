@@ -2,6 +2,9 @@ const express = require("express");
 const { db1, dbGraph, productGraph } = require("../database/db");
 const compareGraph = require("../middelwares/Compare.Middelware");
 
+const fs = require("fs");
+const path = require("path");
+
 const router = express.Router();
 const xlsx = require("xlsx");
 const Neo4jDatabase = require("../../neo4j");
@@ -214,6 +217,8 @@ router.post("/api/architect", async function (req, res) {
     return res.status(400).json({ error: "data Not found" });
   }
   const data = req.body;
+   fs.writeFileSync("data.json", JSON.stringify(data));
+  console.log(data);
   const rooms = data.floorplan.rooms;
   const walls = data.floorplan.walls;
   const cornors = data.floorplan.corners;
@@ -221,6 +226,7 @@ router.post("/api/architect", async function (req, res) {
     const deleteGraph = await dbGraph.deleteGraph();
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
+        console.log(room)
         const roomNode = await dbGraph.createRoom("room", rooms[room]);
         // //console.log(room + ": " + rooms[room].name);
         const roomcornors = room.split(",");
@@ -410,13 +416,13 @@ router.post("/api/product", async function (req, res) {
 });
 
 router.post("/api/productoroom", async function (req, res) {
-  const { roomName, products } = req.body;
-  console.log(products);
+  const { spaceCode, products } = req.body;
   try {
-    const roomNode = await dbGraph.getRoomByName(roomName);
+    const roomNode = await dbGraph.queryWithPropValueOne("room","spaceCode",spaceCode);
     if (roomNode) {
       products.forEach(async (product) => {
-        const newProduct = await dbGraph.createRoom("product", product);
+        const newProduct = await dbGraph.createNode("product", product);
+        console.log(newProduct)
         const relation = await dbGraph.connectRoomToOther(
           newProduct,
           roomNode,
@@ -430,6 +436,7 @@ router.post("/api/productoroom", async function (req, res) {
     res.status(400).json({ err: err });
   }
 });
+
 
 router.post("/api/addwallprops", async function (req, res) {
   const {
@@ -507,19 +514,19 @@ router.post("/api/addwallprops", async function (req, res) {
 router.post("/api/addroomprop", async (req, res) => {
   const { roomname,spaceCode, usagetype, ahuZone } = req.body;
   try {
-    const checkRoom = await dbGraph.createRoom("room", { name: roomname });
-    console.log(checkRoom);
+    const checkRoom = await dbGraph.queryByRoomName(roomname);
     if(!checkRoom) return res.status(400).json({ message:"Room not found" });
-      const spacecodeNode = await dbGraph.createNode("spacecode", {
-        spaceCode,
-      });
+      // const spacecodeNode = await dbGraph.createNode("spacecode", {
+      //   spaceCode,
+      // });
     const usagetypeNode = await dbGraph.createNode("usagetype", {
         usagetype
     })
+
     const spacecodeRelation = await dbGraph.createMultipleRelation(spacecodeNode,checkRoom,"code")
     const usagetypeRelation = await dbGraph.createMultipleRelation(usagetypeNode, checkRoom, "type")
     if (ahuZone) {
-      const ahuRoom = await dbGraph.createRoom("room", { name: ahuZone });
+      const ahuRoom = await dbGraph.createNode("room", { name: ahuZone });
       const ahuRelation = await dbGraph.createMultipleRelation(ahuRoom, checkRoom, "ahuzone");
     }
     
