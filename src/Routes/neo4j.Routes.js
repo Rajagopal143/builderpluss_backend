@@ -518,13 +518,20 @@ router.post("/api/addroomprop", async (req, res) => {
     if(!checkRoom) return res.status(400).json({ message:"Room not found" });
       // const spacecodeNode = await dbGraph.createNode("spacecode", {
       //   spaceCode,
-      // });
-    const usagetypeNode = await dbGraph.createNode("usagetype", {
+    // });
+    // const spacecodeRelation = await dbGraph.createMultipleRelation(
+      //   spaceCode,
+      //   checkRoom,
+      //   "code"
+      // );
+    if (usagetype) {
+      
+      const usagetypeNode = await dbGraph.createNode("usagetype", {
         usagetype
-    })
-
-    const spacecodeRelation = await dbGraph.createMultipleRelation(spacecodeNode,checkRoom,"code")
-    const usagetypeRelation = await dbGraph.createMultipleRelation(usagetypeNode, checkRoom, "type")
+      })
+      
+        const usagetypeRelation = await dbGraph.createMultipleRelation(usagetypeNode, checkRoom, "type")
+      }
     if (ahuZone) {
       const ahuRoom = await dbGraph.createNode("room", { name: ahuZone });
       const ahuRelation = await dbGraph.createMultipleRelation(ahuRoom, checkRoom, "ahuzone");

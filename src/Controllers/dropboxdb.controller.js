@@ -88,13 +88,13 @@ const generatedData = async (req, res) => {
   fs.writeFileSync("input.json", JSON.stringify(jsonData));
   try {
     
-  const response= await  fetch("http://127.0.0.1:5000/process", {
-      method: "POST", // Important: Set method to POST
-      headers: {
-        "Content-Type": "application/json", // Set content type for JSON data
-      },
-      body: JSON.stringify(jsonData), // Convert object to JSON string
-    })
+  const response = await fetch("http://23.20.122.223:8000/process", {
+    method: "POST", // Important: Set method to POST
+    headers: {
+      "Content-Type": "application/json", // Set content type for JSON data
+    },
+    body: JSON.stringify(jsonData), // Convert object to JSON string
+  });
     const changeData =await response.json()// Parse response as JSON
     console.log(changeData);
     res.status(200).json(changeData)
@@ -102,9 +102,6 @@ const generatedData = async (req, res) => {
     res.status(400).json({error:err})
   }
 
-
-
-    
   };
 
 

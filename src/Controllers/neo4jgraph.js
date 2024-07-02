@@ -212,7 +212,7 @@ RETURN p`;
     try {
       // Check if main node with roomtype exists
       const query = `
-            MATCH (n:${label} { name:"${properties.spaceCode}"})
+            MATCH (n:${label} { spaceCode:"${properties.spaceCode}"})
             RETURN n
         `;
       const mainResult = await this.query(query, properties);
