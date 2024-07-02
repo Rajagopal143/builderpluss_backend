@@ -162,6 +162,7 @@ const filter = async (req, res) => {
 };
 
 const allProducts = async (req, res) => {
+  console.log(req);
   const data = [];
   try {
     const query = "MATCH (p:Product) RETURN p";
