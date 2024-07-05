@@ -217,8 +217,7 @@ router.post("/api/architect", async function (req, res) {
     return res.status(400).json({ error: "data Not found" });
   }
   const data = req.body;
-   fs.writeFileSync("data.json", JSON.stringify(data));
-  console.log(data);
+  //  fs.writeFileSync("data.json", JSON.stringify(data));
   const rooms = data.floorplan.rooms;
   const walls = data.floorplan.walls;
   const cornors = data.floorplan.corners;
@@ -226,7 +225,6 @@ router.post("/api/architect", async function (req, res) {
     const deleteGraph = await dbGraph.deleteGraph();
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
-        console.log(room)
         const roomNode = await dbGraph.createRoom("room", rooms[room]);
         // //console.log(room + ": " + rooms[room].name);
         const roomcornors = room.split(",");
@@ -236,7 +234,8 @@ router.post("/api/architect", async function (req, res) {
             roomcornors.includes(wall.corner1) &&
             roomcornors.includes(wall.corner2)
           ) {
-            console.log(wall);
+        
+           
             const wallNode = await dbGraph.createWall("Wall", {
               id1: wall.corner1,
               id2: wall.corner2,
@@ -247,8 +246,41 @@ router.post("/api/architect", async function (req, res) {
               wallType: wall.wallType,
               lenght: wall.length,
             });
+             if (wall.direction) {
+               const direction = await dbGraph.createNode("direction", {
+                 direction: wall.direction,
+               });
+               console.log(direction)
+                await dbGraph.connectRoomToOther(
+                  direction,
+                  wallNode,
+                  "has_direction"
+                );
+            }
+            if (wall.door.length != 0) {
+              const door = wall.door;
+              for(let item of door) {
+                const doorNode = await dbGraph.createNode("door", item);
+                await dbGraph.connectRoomToOther(
+                  doorNode,
+                  wallNode,
+                  "has_Door"
+                );
+              }
+            }
+            if (wall.window.length != 0) {
+              const window = wall.window;
+              for(let item of window) {
+                const windowNode = await dbGraph.createNode("window", item);
+                await dbGraph.connectRoomToOther(
+                  windowNode,
+                  wallNode,
+                  "has_window"
+                );
+              }
+            }
             //console.log(wallNode);
-            const relation = await dbGraph.connectRoomToOther(
+            await dbGraph.connectRoomToOther(
               wallNode,
               roomNode,
               "ifc_wall"

@@ -206,7 +206,6 @@ RETURN p`;
     }
   }
   async createRoom(label, properties) {
-    console.log(properties);
     const session = this.db.session({ database: this.databaseName });
     let mainNode;
     try {
@@ -240,11 +239,33 @@ RETURN p`;
           name: properties.name,
           properties,
         });
-        console.log(updateMainResult);
 
         mainNode = updateMainResult.records[0].get("n").identity.low;
-        console.log(properties, mainNode);
       }
+      
+       if (properties.usagetype != "AHU") {
+         const usagetypeNode = await this.createNode("usagetype", {
+           usagetype:properties.usagetype
+         });
+           await this.createMultipleRelation(
+           usagetypeNode,
+           mainNode,
+           "type"
+         );
+       } else {
+         if (properties.ahuZone) {
+           const ahuRoom = await this.queryByRoomName(properties.ahuZone);
+          console.log( await this.createMultipleRelation(
+             ahuRoom,
+             mainNode,
+             "ahuzone"
+            ));
+          }
+        }
+          
+      
+
+
       return mainNode;
     } catch (e) {
       return e;
