@@ -1,7 +1,6 @@
 const express = require("express");
 const { db1, dbGraph, productGraph } = require("../database/db");
 const compareGraph = require("../middelwares/Compare.Middelware");
-
 const fs = require("fs");
 const path = require("path");
 
@@ -222,20 +221,16 @@ router.post("/api/architect", async function (req, res) {
   const walls = data.floorplan.walls;
   const cornors = data.floorplan.corners;
   try {
-    const deleteGraph = await dbGraph.deleteGraph();
+    await dbGraph.deleteGraph();
     for (let room in rooms) {
       if (rooms.hasOwnProperty(room)) {
         const roomNode = await dbGraph.createRoom("room", rooms[room]);
-        // //console.log(room + ": " + rooms[room].name);
         const roomcornors = room.split(",");
-        const length = roomcornors.length;
         walls.forEach(async (wall, index) => {
           if (
             roomcornors.includes(wall.corner1) &&
             roomcornors.includes(wall.corner2)
           ) {
-        
-           
             const wallNode = await dbGraph.createWall("Wall", {
               id1: wall.corner1,
               id2: wall.corner2,
@@ -375,36 +370,34 @@ router.delete("/api/twodGraph/delete", async function (req, res) {
 
 router.get("/api/getgraph", async function (req, res) {
   const roomlist = await dbGraph.queryNodesByLabel("room");
+  const ahulist = await dbGraph.queryAHU();
+  const data = []
+  for (let ahu of ahulist) {
+    const rooms = await dbGraph.queryRoomsByAHUZone(ahu)
+    const ahudata = {[ahu]:[]};
+    for (let room of rooms) {
+      const roomData = {};
+      Object.keys(room.properties).forEach((key) => {
+        roomData[key] = room.properties[key];
+      });
+
+      roomData["ExposedWall"] = await dbGraph.queryExposedWall(room.identity.low);
+      roomData["SharedWalls"] = await dbGraph.querySharedWall(
+        room.identity.low
+      );
+      roomData["door"] = await dbGraph.getConnectedProducts(room.id);
+      ahudata[ahu].push(roomData);
+    }
+    data.push(ahudata)
+   }
   const walls = await dbGraph.queryNodesByLabel("Wall");
-  const data = [];
-  for (let room of roomlist) {
-    const roomData = {};
-    Object.keys(room.properties).forEach((key) => {
-      roomData[key] = room.properties[key];
-    });
-    roomData["Walls"] = await dbGraph.getWallByRoomId(room.id);
-    roomData["ExposedWall"] = await dbGraph.queryExposedWall(room.id);
-    roomData["SharedWalls"] = await dbGraph.querySharedWall(room.id);
-    roomData["products"] = await dbGraph.getConnectedProducts(room.id);
-    data.push(roomData);
-  }
-  // const walldata=[]
-  // for (let wall of walls) {
-  //   const { id, properties } = wall;
-  //   const wallObject = {};
-  //   wallObject['id'] = id;
-  //   wallObject["length"] = properties.length;
-  //   wallObject['vertices'] = [
-  //     {"x":properties.x1,"y":properties.y1},
-  //     {"x":properties.x2,"y":properties.y2},
-  //     {"x":properties.x3,"y":properties.y3},
-  //     {"x":properties.x4,"y":properties.y4}
-  //   ]
-  //   walldata.push(wallObject);
-  // }
-  // data.push({AllWalls:walldata})
+
+
   res.status(200).json(data);
+
 });
+
+
 
 router.post("/api/product", async function (req, res) {
   const data = req.body;

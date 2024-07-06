@@ -210,57 +210,30 @@ RETURN p`;
     let mainNode;
     try {
       // Check if main node with roomtype exists
-      const query = `
-            MATCH (n:${label} { spaceCode:"${properties.spaceCode}"})
-            RETURN n
-        `;
-      const mainResult = await this.query(query, properties);
-
-      if (mainResult?.records?.length === 0) {
-        // Main node does not exist, create it
-        const createMainResult = await this.queryWithParams(
-          `CREATE (n:${label} {${Object.keys(properties)
-            .map((key) => `\`${key}\` :"${properties[key]}"`)
-            .join(" ,")}})
+     const createMainResult = await this.queryWithParams(
+       `CREATE (n:${label} {${Object.keys(properties)
+         .map((key) => `\`${key}\` :"${properties[key]}"`)
+         .join(" ,")}})
             RETURN n`,
-          properties
-        );
+       properties
+     );
 
-        mainNode = createMainResult?.records[0].get("n").identity?.low;
-      } else {
-        // Main node already exists
-        const updateQuery = `
-        MATCH (n:${label} { name: $name })
-        SET n = $properties
-        RETURN n
-      `;
+     mainNode = createMainResult?.records[0].get("n").identity?.low;
 
-        const updateMainResult = await this.queryWithParams(updateQuery, {
-          name: properties.name,
-          properties,
-        });
-
-        mainNode = updateMainResult.records[0].get("n").identity.low;
-      }
       
-       if (properties.usagetype != "AHU") {
-         const usagetypeNode = await this.createNode("usagetype", {
-           usagetype:properties.usagetype
-         });
-           await this.createMultipleRelation(
-           usagetypeNode,
-           mainNode,
-           "type"
-         );
-       } else {
-         if (properties.ahuZone) {
-           const ahuRoom = await this.queryByRoomName(properties.ahuZone);
-          console.log( await this.createMultipleRelation(
-             ahuRoom,
-             mainNode,
-             "ahuzone"
-            ));
-          }
+    console.log("hi",mainNode)
+      
+      if (properties.usagetype != "AHU") {
+          const ahuRoom = await this.queryByRoomName(properties.ahuZone);
+          await this.createMultipleRelation(ahuRoom, mainNode, "ahuzone");
+        
+      } else {
+        const usagetypeNode = await this.createNode("usagetype", {
+          usagetype: properties.usagetype,
+        });
+        await this.createMultipleRelation(usagetypeNode, mainNode, "type");
+      
+        
         }
           
       
@@ -294,7 +267,6 @@ RETURN p`;
       const query = `MATCH (u:usagetype {usagetype:"AHU"})<-[:has_type]-(r:room)
       RETURN r`;
       const result = await this.query(query);
-      console.log(result);
       if (result.records.length === 0) {
         return null; // No room found
       }
@@ -307,6 +279,24 @@ RETURN p`;
     } catch (err) {
       return err;
     }
+  }
+  async queryRoomsByAHUZone(name) {
+     try {
+       const query = `MATCH (n:room {name:"${name}"})<-[:has_ahuzone]-(r:room)
+      RETURN r`;
+       const result = await this.query(query);
+       if (result.records.length === 0) {
+         return null; // No room found
+       }
+       const ahulist = [];
+       result.records.forEach((record) =>
+         ahulist.push(record.get("r"))
+       );
+       //console.log(data);
+       return ahulist;
+     } catch (err) {
+       return err;
+     }
   }
   async deleteGraph() {
     try {
@@ -321,7 +311,7 @@ RETURN p`;
    try {
      const query = `MATCH (n:room {name:"${roomname}"}) RETURN n`;
      const result = await this.query(query);
-     console.log(result.records[0].get("n").identity.low);
+    //  console.log(result)
       return result.records[0].get('n').identity.low;
    } catch (err) {
      return err;
@@ -405,16 +395,26 @@ WITH w, count(r) AS connection
 WHERE connection =1
 RETURN w`);
       const data = [];
-      exposedNode.records.forEach((record) => {
+      exposedNode.records.forEach(async (record) => {
         const miniData = {};
         miniData["wallId"] = record.get(0).identity.low;
         miniData["length"] = record.get(0).properties.length;
+        const direction = await this.query(
+          `MATCH (n:Wall) WHERE id(n)=${
+            record.get(0).identity.low
+          } MATCH (n)-[:has_direction]->(d:direction) RETURN d`
+        );
+        console.log(direction);
+        miniData["direction"] =
+          direction?.records[0]?.get("d")?.properties.direction;
         data.push(miniData);
       });
 
-      exposedNode.records.forEach((r) => {
-        //console.log(r.get(0).identity.low);
-      });
+
+      for (let exp of data) {
+        
+      }
+   
       return data;
     } catch (err) {
       //console.log(err);
