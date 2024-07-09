@@ -1,12 +1,8 @@
 const express = require("express");
 const { db1, dbGraph, productGraph } = require("../database/db");
-const compareGraph = require("../middelwares/Compare.Middelware");
-const fs = require("fs");
-const path = require("path");
 
 const router = express.Router();
-const xlsx = require("xlsx");
-const Neo4jDatabase = require("../../neo4j");
+const { exposedWallDetails, widowDimesions, windowQuantity, exposedGlassArea } = require("../Controllers/GraphControllors");
 // // Create Node
 router.post("/api/node", async (req, res) => {
   const { label, properties, message } = req.body;
@@ -241,11 +237,10 @@ router.post("/api/architect", async function (req, res) {
               wallType: wall.wallType,
               lenght: wall.length,
             });
-             if (wall.direction) {
-               const direction = await dbGraph.createNode("direction", {
+             if (wall.direction !== "") {
+               const direction = await dbGraph.createDirection("direction", {
                  direction: wall.direction,
                });
-               console.log(direction)
                 await dbGraph.connectRoomToOther(
                   direction,
                   wallNode,
@@ -356,6 +351,7 @@ router.post("/api/twodGraph", async function (req, res) {
   res.status(200).json({ message: "Graph Updated Successfully" });
 });
 
+
 router.delete("/api/twodGraph/delete", async function (req, res) {
   try {
     const result = await dbGraph.query("MATCH (n) DETACH DELETE n");
@@ -363,14 +359,16 @@ router.delete("/api/twodGraph/delete", async function (req, res) {
       message: "All Nodes deleted",
     });
   } catch (e) {
-    //console.log(e);
+    //console.log(e);-
     return res.status(400).json({ message: e.message });
   }
 });
 
+
 router.get("/api/getgraph", async function (req, res) {
   const roomlist = await dbGraph.queryNodesByLabel("room");
   const ahulist = await dbGraph.queryAHU();
+  if (ahulist == null) return res.status(404).json({ error: "AHU Zone Not Selected" })
   const data = []
   for (let ahu of ahulist) {
     const rooms = await dbGraph.queryRoomsByAHUZone(ahu)
@@ -381,7 +379,25 @@ router.get("/api/getgraph", async function (req, res) {
         roomData[key] = room.properties[key];
       });
 
-      roomData["ExposedWall"] = await dbGraph.queryExposedWall(room.identity.low);
+      const area = room.properties["area"]
+      roomData["Area(Sqft)"] = Math.round(Number(area.replace("m²", "")) * 10.764);
+      roomData["Exposed Wall Details"] = await exposedWallDetails(room.identity.low);
+      roomData["Type - 1  Window Dimensions"] = await widowDimesions("type1", room.identity.low)
+      roomData["Type 1 Window Qty (Nos)"] = await windowQuantity(
+        "type1",
+        room.identity.low
+      );
+      roomData["Type - 2  Window Dimensions"] = await widowDimesions("type2", room.identity.low)
+      roomData["Type 2 Window Qty (Nos)"] = await windowQuantity(
+        "type2",
+        room.identity.low
+      );
+      roomData["Type - 3  Window Dimensions"] = await widowDimesions("type3", room.identity.low)
+      roomData["Type 3 Window Qty (Nos)"] = await windowQuantity(
+        "type3",
+        room.identity.low
+      );
+      roomData["Exposed Glass Area (m2)"] = await exposedGlassArea(room.identity.low);
       roomData["SharedWalls"] = await dbGraph.querySharedWall(
         room.identity.low
       );
@@ -391,8 +407,6 @@ router.get("/api/getgraph", async function (req, res) {
     data.push(ahudata)
    }
   const walls = await dbGraph.queryNodesByLabel("Wall");
-
-
   res.status(200).json(data);
 
 });

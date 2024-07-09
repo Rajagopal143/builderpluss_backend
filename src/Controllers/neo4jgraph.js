@@ -181,8 +181,7 @@ RETURN p`;
           .join(" AND ")}
             RETURN n
         `;
-      const mainResult = await this.query(query, properties);
-
+      const mainResult = await this.query(query);
       if (mainResult?.records?.length === 0) {
         // Main node does not exist, create it
         const createMainResult = await this.queryWithParams(
@@ -191,10 +190,11 @@ RETURN p`;
             .join(" ,")}})
             RETURN n`,
           properties
-        );
-
-        mainNode = createMainResult?.records[0].get("n").identity?.low;
-      } else {
+          );
+          
+          mainNode = createMainResult?.records[0].get("n").identity?.low;
+        } else {
+          console.log(query,properties);
         // Main node already exists
         mainNode = mainResult?.records[0]?.get(0).identity?.low;
       }
@@ -204,6 +204,34 @@ RETURN p`;
     } finally {
       await session.close();
     }
+  }
+
+  async createDirection(label,{direction}) {
+     let mainNode;
+     try {
+       // Check if main node with roomtype exists
+       const query = `
+            MATCH (n:${label})
+            WHERE n.direction = "${direction}"
+            RETURN n
+            `;
+       const mainResult = await this.query(query);
+       if (mainResult?.records?.length === 0) {
+         // Main node does not exist, create it
+         const createMainResult = await this.query(
+           `CREATE (n:${label} {direction:"${direction}"})
+           RETURN n`,
+         );
+           
+           mainNode = createMainResult?.records[0].get("n").identity?.low;
+          } else {
+         // Main node already exists
+         mainNode = mainResult?.records[0]?.get(0).identity?.low;
+       }
+       return mainNode;
+     } catch (e) {
+       return e;
+     } 
   }
   async createRoom(label, properties) {
     const session = this.db.session({ database: this.databaseName });
@@ -220,13 +248,11 @@ RETURN p`;
 
      mainNode = createMainResult?.records[0].get("n").identity?.low;
 
-      
-    console.log("hi",mainNode)
-      
-      if (properties.usagetype != "AHU") {
-          const ahuRoom = await this.queryByRoomName(properties.ahuZone);
-          await this.createMultipleRelation(ahuRoom, mainNode, "ahuzone");
-        
+     
+     if (properties.usagetype != "AHU") {
+       const ahuRoom = await this.queryByRoomName(properties.ahuZone);
+       await this.createMultipleRelation(ahuRoom, mainNode, "ahuzone");
+       
       } else {
         const usagetypeNode = await this.createNode("usagetype", {
           usagetype: properties.usagetype,
@@ -285,6 +311,7 @@ RETURN p`;
        const query = `MATCH (n:room {name:"${name}"})<-[:has_ahuzone]-(r:room)
       RETURN r`;
        const result = await this.query(query);
+      //  console.log(result)
        if (result.records.length === 0) {
          return null; // No room found
        }
@@ -293,6 +320,7 @@ RETURN p`;
          ahulist.push(record.get("r"))
        );
        //console.log(data);
+
        return ahulist;
      } catch (err) {
        return err;
@@ -312,7 +340,7 @@ RETURN p`;
      const query = `MATCH (n:room {name:"${roomname}"}) RETURN n`;
      const result = await this.query(query);
     //  console.log(result)
-      return result.records[0].get('n').identity.low;
+      return result?.records[0]?.get('n')?.identity?.low;
    } catch (err) {
      return err;
    }
@@ -372,8 +400,7 @@ RETURN p`;
 
   async createMultipleRelation(endId, startId, type) {
     try {
-      var relation = null;
-      relation = await this.query(`
+       await this.query(`
         MATCH (a),(b)
         WHERE ID(a) = ${startId} AND ID(b) = ${endId}
         MERGE  (a)-[:has_${type}]->(b)
@@ -381,41 +408,29 @@ RETURN p`;
         `);
       //console.log(relation,id);
 
-      return relation?.records[0]?.get(0).identity?.low;
+      return ;
     } catch (err) {
       console.log(err);
     }
   }
-  async queryExposedWall(id) {
+  async queryExposedWall(id,direction) {
     try {
       const exposedNode = await this.query(`MATCH (n:room) WHERE id(n)=${id}
 MATCH (n)-[:ifc_wall]->(w:Wall)
 MATCH (w)<-[:ifc_wall]-(r:room)
-WITH w, count(r) AS connection
-WHERE connection =1
-RETURN w`);
-      const data = [];
-      exposedNode.records.forEach(async (record) => {
-        const miniData = {};
-        miniData["wallId"] = record.get(0).identity.low;
-        miniData["length"] = record.get(0).properties.length;
-        const direction = await this.query(
-          `MATCH (n:Wall) WHERE id(n)=${
-            record.get(0).identity.low
-          } MATCH (n)-[:has_direction]->(d:direction) RETURN d`
-        );
-        console.log(direction);
-        miniData["direction"] =
-          direction?.records[0]?.get("d")?.properties.direction;
-        data.push(miniData);
-      });
-
-
-      for (let exp of data) {
-        
+MATCH (w)-[:has_direction]->(d:direction {direction:"${direction}"})
+RETURN r,w`);
+      const room = [];
+      exposedNode?.records.forEach(record => {
+        room.push(record.get('r'));
+      })
+      const wall = exposedNode?.records[0]?.get('w')?.properties?.length;
+      if (room.length == 1) {
+        return wall;
+      } else {
+        return null;
       }
    
-      return data;
     } catch (err) {
       //console.log(err);
     }
